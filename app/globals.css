@@ -1,13 +1,67 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* colors */
+  --ink: rgb(29, 27, 27);
+  --ink-black: rgb(0, 0, 0);
+  --paper: rgb(255, 253, 250);
+  --white: rgb(255, 255, 255);
+  --gray-ink: rgb(51, 48, 48);
+  --gray-input: rgb(217, 217, 217);
+  --gray-warm: rgb(217, 214, 210);
+  --gray-solid: rgb(83, 83, 83);
+  --shadow-hard: rgb(30, 30, 30);
+  --text-primary: var(--ink);
+  --text-body: var(--ink-black);
+  --text-inverse: var(--white);
+  --text-muted: var(--gray-ink);
+  --surface-page: var(--paper);
+  --surface-input: var(--gray-input);
+  --surface-input-alt: var(--gray-warm);
+  --surface-button-solid: var(--gray-solid);
+  --border-ink: var(--ink);
+
+  /* spacing */
+  --space-1: 8px;
+  --space-2: 10px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 19px;
+  --space-6: 24px;
+  --space-7: 32px;
+  --space-8: 72px;
+  --space-9: 120px;
+  --radius-sm: 4px;
+  --radius-md: 5px;
+  --radius-lg: 16px;
+  --radius-xl: 32px;
+  --stroke-thin: 1px;
+  --stroke-thick: 3px;
+  --stroke-heavy: 6px;
+
+  /* shadows */
+  --shadow-pop: 6px 6px 0px 0px var(--shadow-hard);
+  --shadow-pop-sm: 4px 4px 0px 0px var(--shadow-hard);
+  --outline-thick: inset 0 0 0 6px var(--ink);
+  --outline-thin: inset 0 0 0 3px var(--ink);
+
+  /* typography sizes */
+  --text-display-xl: 128px;
+  --text-display-lg: 64px;
+  --text-display-md: 32px;
+  --text-heading-lg: 32px;
+  --text-heading-md: 24px;
+  --text-heading-sm: 20px;
+  --text-subhead: 22px;
+  --text-body-lg: 20px;
+  --text-body-md: 16px;
+  --text-body-sm: 12px;
+  --weight-medium: 500;
+  --weight-bold: 700;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 html {
@@ -22,19 +76,10 @@ body {
 
 body {
   min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--paper);
+  font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
 }
 
 a {
@@ -42,8 +87,18 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+a:hover {
+  color: var(--ink);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+  color: inherit;
 }

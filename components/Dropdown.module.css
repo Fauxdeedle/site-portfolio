@@ -1,0 +1,66 @@
+.dropdown {
+  position: relative;
+  width: 100%;
+  border-radius: var(--radius-lg);
+  background-color: var(--surface-input-alt);
+  padding: 12px 14px 12px 16px;
+  box-sizing: border-box;
+}
+
+.trigger {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  background: none;
+  border: none;
+  width: 100%;
+  padding: 0;
+}
+
+.triggerOpen {
+  border-bottom: 1px solid var(--ink-black);
+  padding-bottom: 8px;
+}
+
+.value {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: var(--text-heading-sm);
+  color: var(--ink-black);
+}
+
+.chevron {
+  color: var(--ink-black);
+  transition: transform 150ms ease;
+  flex-shrink: 0;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 8px 0 0;
+  list-style: none;
+}
+
+.option {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: var(--text-heading-sm);
+  color: var(--ink-black);
+  cursor: pointer;
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 0;
+}
+
+.option:hover {
+  opacity: 0.7;
+}

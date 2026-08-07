@@ -1,0 +1,30 @@
+.shared {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  border: none;
+  padding: 10px 16px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: var(--text-heading-sm);
+  color: var(--ink-black);
+  box-sizing: border-box;
+  outline: none;
+}
+
+.shared::placeholder {
+  color: var(--gray-ink);
+  opacity: 0.6;
+}
+
+.input {
+  height: 48px;
+  background-color: var(--surface-input);
+}
+
+.textarea {
+  min-height: 120px;
+  background-color: var(--surface-input-alt);
+  resize: vertical;
+  font-family: var(--font-body);
+  font-weight: 500;
+}

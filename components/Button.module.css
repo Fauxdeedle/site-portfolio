@@ -1,0 +1,33 @@
+.button {
+  position: relative;
+  display: inline-flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: transform 120ms ease, box-shadow 120ms ease;
+  border-radius: var(--radius-sm);
+  background-color: var(--paper);
+  box-shadow: var(--outline-thin);
+  padding: 8px 24px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--ink);
+  line-height: 100%;
+}
+
+.button:hover {
+  box-shadow: var(--outline-thin), var(--shadow-pop);
+}
+
+.md {
+  font-size: 24px;
+}
+
+.sm {
+  font-size: 16px;
+}
