@@ -34,6 +34,7 @@
 
 .name {
   font-family: var(--font-display);
+  font-weight: 800;
   font-size: clamp(48px, 11vw, 128px);
   color: var(--ink);
   line-height: 1;
@@ -75,6 +76,7 @@
 
 .statNumber {
   font-family: var(--font-display);
+  font-weight: 800;
   font-size: 32px;
   color: var(--ink);
 }
@@ -102,6 +104,7 @@
 
 .sectionHeading {
   font-family: var(--font-display);
+  font-weight: 800;
   font-size: clamp(32px, 6vw, 64px);
   color: var(--ink);
 }

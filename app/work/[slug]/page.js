@@ -73,12 +73,20 @@ export default async function ProjectPage({ params }) {
       </div>
 
       <div className={styles.gallery}>
-        <div className={styles.galleryItem}>
-          <ImagePlaceholder label="Process / gallery image" radius={16} />
-        </div>
-        <div className={styles.galleryItem}>
-          <ImagePlaceholder label="Process / gallery image" radius={16} />
-        </div>
+        {[0, 1].map((i) => (
+          <div className={styles.galleryItem} key={i}>
+            {project.gallery[i] ? (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src={project.gallery[i]}
+                alt={`${project.name} process ${i + 1}`}
+                className={styles.galleryImage}
+              />
+            ) : (
+              <ImagePlaceholder label="Process / gallery image" radius={16} />
+            )}
+          </div>
+        ))}
       </div>
 
       <div className={`${styles.copyBlock} ${styles.noTop}`}>
