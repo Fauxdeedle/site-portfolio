@@ -7,18 +7,21 @@ build time by `lib/projects.js`.
 
 ## How it's wired up
 
-- `lib/projects.js` reads every `*.md` file in this directory with Node `fs`
-  at module scope (`fs.readdirSync` + `fs.readFileSync`), parses frontmatter
-  with `gray-matter`, and exports `projects` / `getProject(slug)` /
-  `getNextProject(slug)` — the same three exports the old hardcoded-array
-  version exposed, so `app/page.js` and `app/work/[slug]/page.js` import it
-  unchanged.
+- Project files live in `content/projects/entries/`, one Markdown file per
+  project. This subfolder is deliberately separate from directory docs
+  (`README.md`, this `CLAUDE.md`) — the loader reads *every* `.md` file it
+  finds there, so nothing but real project files can go in `entries/`. (This
+  used to be a flat folder with a filename blocklist that excluded
+  `README.md`; a stray `CLAUDE.md` slipped past the blocklist and got loaded
+  as a broken project, which is why the split exists now.)
+- `lib/projects.js` reads every `*.md` file in `content/projects/entries/`
+  with Node `fs` at module scope (`fs.readdirSync` + `fs.readFileSync`),
+  parses frontmatter with `gray-matter`, and exports `projects` /
+  `getProject(slug)` / `getNextProject(slug)` — the same three exports the
+  old hardcoded-array version exposed, so `app/page.js` and
+  `app/work/[slug]/page.js` import it unchanged.
 - The **filename** (minus `.md`) is the slug and becomes the route:
-  `soulmates-ai.md` → `/work/soulmates-ai`.
-- `README.md` in this folder is explicitly excluded from the loader (it's a
-  human-facing doc, not a project) — if you add other non-project files here,
-  extend that filter in `lib/projects.js` or they'll be treated as broken
-  projects.
+  `entries/soulmates-ai.md` → `/work/soulmates-ai`.
 - The markdown **body** of every project file is unused — everything lives in
   frontmatter. There is no markdown-to-HTML rendering pipeline (no
   remark/rehype); `challenge`/`result` are plain frontmatter strings rendered
@@ -33,6 +36,15 @@ ascending by `order` (ties broken by slug). That sort order is what drives:
   lowest),
 - the "next project" link on each detail page (`getNextProject` walks the
   sorted array and wraps around).
+
+`portfolioOrder: <number>` is the same idea for `/portfolio`, the link-only
+homepage used for job searching (see `app/portfolio/page.js`). It's optional
+and independent of `order` — `portfolioProjects` (exported alongside
+`projects`) filters to only projects that set it, then sorts ascending by it
+(ties broken by slug). A project with no `portfolioOrder` simply doesn't
+appear on `/portfolio`; `getNextProject` is unaffected and still walks the
+full `order`-sorted list regardless of which homepage a visitor arrived
+from.
 
 ## Gallery
 

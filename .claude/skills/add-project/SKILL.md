@@ -1,12 +1,12 @@
 ---
 name: add-project
-description: Use when the user wants to add a new project to the portfolio site's /work section — e.g. "add a project", "new project page", "set up a project page for X", or when they hand over rough notes/images for a project that should become one of the site's case studies. Walks through drafting copy, placing images, and writing the content/projects/<slug>.md file that lib/projects.js loads.
+description: Use when the user wants to add a new project to the portfolio site's /work section — e.g. "add a project", "new project page", "set up a project page for X", or when they hand over rough notes/images for a project that should become one of the site's case studies. Walks through drafting copy, placing images, and writing the content/projects/entries/<slug>.md file that lib/projects.js loads.
 user-invocable: true
 ---
 
 # Add a project page
 
-Produces a new `content/projects/<slug>.md` file for this portfolio site,
+Produces a new `content/projects/entries/<slug>.md` file for this portfolio site,
 plus the images it references in `public/images/`. Read
 `content/projects/README.md` first — it's the authoritative field reference
 and YAML style guide; this skill doesn't repeat it, only the workflow around
@@ -19,7 +19,8 @@ mechanics if anything here is ambiguous.
    collect: project name, client, role, year, and rough notes on the
    challenge and result (bullet points are fine — you're drafting the prose,
    not transcribing it). For `category`, check the existing values across
-   `content/projects/*.md` first (`grep -h '^category:' content/projects/*.md`)
+   `content/projects/entries/*.md` first
+   (`grep -h '^category:' content/projects/entries/*.md`)
    and reuse one if it fits; only introduce a new category if the user's
    project genuinely doesn't match any existing one, and say so. Ask for
    image file paths (a hero image, plus up to 2 gallery images) if not
@@ -36,11 +37,11 @@ mechanics if anything here is ambiguous.
    detailed.
 
 3. **Resolve the slug.** Kebab-case the project name (lowercase, hyphenated).
-   Check `content/projects/` for a collision; if one exists, ask the user how
-   to disambiguate rather than overwriting silently.
+   Check `content/projects/entries/` for a collision; if one exists, ask the
+   user how to disambiguate rather than overwriting silently.
 
 4. **Resolve `order`.** Read every `order:` value from
-   `content/projects/*.md` and default the new project to `max + 1` (appends
+   `content/projects/entries/*.md` and default the new project to `max + 1` (appends
    to the end — doesn't touch the homepage's featured/teaser slots). Only use
    a different value (e.g. `order: 1` to feature it) if the user explicitly
    asks for that placement.
@@ -59,7 +60,7 @@ mechanics if anything here is ambiguous.
      images, ask which 2 to use. If they give 0 or 1, that's fine — missing
      slots render a placeholder on the live page, no field needed for them.
 
-6. **Write `content/projects/<slug>.md`.** Follow the field list, order, and
+6. **Write `content/projects/entries/<slug>.md`.** Follow the field list, order, and
    YAML style in `content/projects/README.md` exactly — folded `>-` block
    style for `description`/`challenge`/`result`, `year` quoted as a string,
    `heroImage`/`gallery` as `/images/...` paths. No markdown body content;

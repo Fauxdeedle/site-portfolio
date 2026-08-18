@@ -1,6 +1,7 @@
 ---
 name: Soulmates.ai
-order: 1
+order: 4
+portfolioOrder: 2
 category: print - branding
 tagline: A dating app rebrand — print, branding, and launch website
 description: >-

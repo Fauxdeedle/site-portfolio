@@ -1,12 +1,13 @@
 # Adding a project
 
-Each project on the site is one Markdown file in this folder. The filename
-(minus `.md`) becomes the project's URL — `soulmates-ai.md` → `/work/soulmates-ai`.
+Each project on the site is one Markdown file in `content/projects/entries/`.
+The filename (minus `.md`) becomes the project's URL —
+`entries/soulmates-ai.md` → `/work/soulmates-ai`.
 
 ## To add a new project
 
-1. Copy an existing `.md` file in this folder and rename it to your new
-   project's slug (lowercase, hyphenated, e.g. `acme-rebrand.md`).
+1. Copy an existing `.md` file in `content/projects/entries/` and rename it
+   to your new project's slug (lowercase, hyphenated, e.g. `acme-rebrand.md`).
 2. Fill in the fields below.
 3. Drop any images into `/public/images/` and reference them by path
    (e.g. `/images/acme-hero.png`) in `heroImage` / `gallery`.
@@ -17,12 +18,19 @@ creation date. The project with the lowest `order` is the homepage's featured
 project; the next two lowest are the homepage teasers; ties are broken
 alphabetically by slug. Give your new project a unique `order` number.
 
+**`portfolioOrder` controls the same thing for `/portfolio`** — the link-only
+homepage used for job searching — independently of `order`. It's optional: a
+project only shows up on `/portfolio` if it has a `portfolioOrder`, so you can
+curate a different set (and different order) of projects for that page
+without touching `order` or the main homepage.
+
 ## Fields
 
 | Field | Type | Required | Notes |
 |---|---|---|---|
 | `name` | string | yes | Project name |
-| `order` | number | yes | Controls display order everywhere |
+| `order` | number | yes | Controls display order on the main homepage (`/`) |
+| `portfolioOrder` | number | no | Controls display order on the link-only portfolio homepage (`/portfolio`); omit to leave the project off that page |
 | `category` | string | yes | e.g. `branding`, `websites`, `print - branding` |
 | `tagline` | string | yes | Short one-liner |
 | `description` | string | yes | Used on the homepage featured card |
@@ -50,6 +58,7 @@ challenge: >-
 ---
 name: Acme Co Rebrand
 order: 4
+portfolioOrder: 1
 category: branding
 tagline: A full identity refresh for a 20-year-old hardware brand
 description: >-

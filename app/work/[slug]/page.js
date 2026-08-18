@@ -18,17 +18,21 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default async function ProjectPage({ params }) {
+export default async function ProjectPage({ params, searchParams }) {
   const { slug } = await params;
+  const { from } = await searchParams;
   const project = getProject(slug);
   if (!project) notFound();
 
   const next = getNextProject(slug);
+  const fromPortfolio = from === "portfolio";
+  const homeHref = fromPortfolio ? "/portfolio" : "/";
+  const nextQuery = fromPortfolio ? "?from=portfolio" : "";
 
   return (
     <div className={styles.container}>
       <div className={styles.back}>
-        <ButtonLink href="/" size="sm">
+        <ButtonLink href={homeHref} size="sm">
           ← Back to work
         </ButtonLink>
       </div>
@@ -96,7 +100,7 @@ export default async function ProjectPage({ params }) {
 
       <div className={styles.next}>
         <span className={styles.nextLabel}>Next project</span>
-        <a href={`/work/${next.slug}`} className={styles.nextLink}>
+        <a href={`/work/${next.slug}${nextQuery}`} className={styles.nextLink}>
           <span className={styles.nextName}>{next.name} →</span>
         </a>
       </div>
