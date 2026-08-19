@@ -14,6 +14,7 @@ export const metadata = {
 export default function Portfolio() {
   const [featured, ...rest] = portfolioProjects;
   const teasers = rest.slice(0, 2);
+  const featuredThumbnail = featured?.thumbnail ?? featured?.heroImage;
 
   return (
     <div className={styles.container}>
@@ -44,10 +45,10 @@ export default function Portfolio() {
         <section className={styles.section}>
           <span className={styles.sectionHeading}>Selected work</span>
           <Link href={`/work/${featured.slug}?from=portfolio`} className={styles.featured}>
-            {featured.heroImage ? (
+            {featuredThumbnail ? (
               // eslint-disable-next-line @next/next/no-img-element
               <img
-                src={featured.heroImage}
+                src={featuredThumbnail}
                 alt={`${featured.name} work sample`}
                 className={styles.featuredImage}
               />
@@ -64,18 +65,30 @@ export default function Portfolio() {
             </div>
           </Link>
           <div className={styles.teasers}>
-            {teasers.map((project) => (
-              <Link
-                key={project.slug}
-                href={`/work/${project.slug}?from=portfolio`}
-                className={styles.teaser}
-              >
-                <div className={styles.teaserImage}>
-                  <ImagePlaceholder label={`Drop ${project.name.toLowerCase()} image`} />
-                </div>
-                <span className={styles.teaserName}>{project.name}</span>
-              </Link>
-            ))}
+            {teasers.map((project) => {
+              const thumbnail = project.thumbnail ?? project.heroImage;
+              return (
+                <Link
+                  key={project.slug}
+                  href={`/work/${project.slug}?from=portfolio`}
+                  className={styles.teaser}
+                >
+                  <div className={styles.teaserImage}>
+                    {thumbnail ? (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img
+                        src={thumbnail}
+                        alt={`${project.name} work sample`}
+                        className={styles.teaserImageImg}
+                      />
+                    ) : (
+                      <ImagePlaceholder label={`Drop ${project.name.toLowerCase()} image`} />
+                    )}
+                  </div>
+                  <span className={styles.teaserName}>{project.name}</span>
+                </Link>
+              );
+            })}
           </div>
         </section>
       )}

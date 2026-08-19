@@ -46,6 +46,18 @@ appear on `/portfolio`; `getNextProject` is unaffected and still walks the
 full `order`-sorted list regardless of which homepage a visitor arrived
 from.
 
+## Thumbnail vs hero image
+
+`heroImage` is the big image on the `/work/[slug]` detail page. `thumbnail`
+(optional) is the image used for the homepage/portfolio card (both the
+featured card and the two teaser cards, in `app/page.js` and
+`app/portfolio/page.js`). When `thumbnail` is unset, those cards fall back to
+`heroImage` (`project.thumbnail ?? project.heroImage`), so most projects only
+need to set one field; `thumbnail` is only needed when the homepage image
+should differ from the detail-page hero. Both are handled the same way as any
+other frontmatter field — no normalization in `lib/projects.js`, unlike
+`gallery`.
+
 ## Gallery
 
 The detail page has a fixed 2-slot gallery layout. `gallery` is an optional

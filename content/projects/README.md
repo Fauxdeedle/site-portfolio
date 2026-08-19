@@ -10,7 +10,7 @@ The filename (minus `.md`) becomes the project's URL —
    to your new project's slug (lowercase, hyphenated, e.g. `acme-rebrand.md`).
 2. Fill in the fields below.
 3. Drop any images into `/public/images/` and reference them by path
-   (e.g. `/images/acme-hero.png`) in `heroImage` / `gallery`.
+   (e.g. `/images/acme-hero.png`) in `heroImage` / `thumbnail` / `gallery`.
 4. Commit and deploy.
 
 **`order` is what controls where a project appears** — not filename or file
@@ -37,7 +37,8 @@ without touching `order` or the main homepage.
 | `client` | string | yes | Use `"—"` if not applicable |
 | `role` | string | yes | Use `"—"` if not applicable |
 | `year` | string | yes | Quote it, e.g. `year: "2026"` |
-| `heroImage` | string | no | `/images/...` path; omit for a "coming soon" project |
+| `heroImage` | string | no | `/images/...` path; the big image on the `/work/[slug]` detail page. Omit for a "coming soon" project |
+| `thumbnail` | string | no | `/images/...` path; the image used for the homepage/portfolio card (featured + teaser). Falls back to `heroImage` if unset — only set this when you want a different image on the homepage than on the detail page |
 | `gallery` | list of strings | no | 0–2 `/images/...` paths; the detail page has two gallery slots — any missing slot shows a placeholder |
 | `challenge` | string | yes | "The challenge" section copy |
 | `result` | string | yes | "The result" section copy |
@@ -67,6 +68,7 @@ client: Acme Co
 role: Branding + Web
 year: "2026"
 heroImage: /images/acme-hero.png
+thumbnail: /images/acme-thumb.png
 gallery:
   - /images/acme-gallery-1.png
   - /images/acme-gallery-2.png
