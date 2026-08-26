@@ -11,8 +11,7 @@ description: >-
 client: Ayzenberg
 role: Product Designer
 year: "2025-2026"
-heroImage: /images/soulmates-ux-hero.png
-thumbnail: /images/soulmates-thumbnail.png
+heroImage: /images/soulmates-ux-hero.png`
 gallery:
   - /images/soulmates-ux-gallery-1.png
   - /images/soulmates-ux-gallery-2.png
