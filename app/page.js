@@ -9,7 +9,7 @@ import styles from "./page.module.css";
 export default function Home() {
   const [featured, ...rest] = projects;
   const teasers = rest.slice(0, 2);
-  const featuredThumbnail = featured.thumbnail ?? featured.heroImage;
+  const featuredThumbnail = featured.thumbnail;
 
   return (
     <div className={styles.container}>
@@ -69,7 +69,7 @@ export default function Home() {
         </Link>
         <div className={styles.teasers}>
           {teasers.map((project) => {
-            const thumbnail = project.thumbnail ?? project.heroImage;
+            const thumbnail = project.thumbnail;
             return (
               <Link key={project.slug} href={`/work/${project.slug}`} className={styles.teaser}>
                 <div className={styles.teaserImage}>

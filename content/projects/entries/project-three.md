@@ -7,8 +7,8 @@ description: Case study write-up in progress.
 client: "—"
 role: "—"
 year: "2026"
-gallery: []
-challenge: >-
+finalDesigns: []
+problem: >-
   Case study write-up in progress — check back soon for the full story.
 result: >-
   Case study write-up in progress — check back soon for the full story.

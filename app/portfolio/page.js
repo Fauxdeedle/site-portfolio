@@ -14,7 +14,7 @@ export const metadata = {
 export default function Portfolio() {
   const [featured, ...rest] = portfolioProjects;
   const teasers = rest.slice(0, 2);
-  const featuredThumbnail = featured?.thumbnail ?? featured?.heroImage;
+  const featuredThumbnail = featured?.thumbnail;
 
   return (
     <div className={styles.container}>
@@ -66,7 +66,7 @@ export default function Portfolio() {
           </Link>
           <div className={styles.teasers}>
             {teasers.map((project) => {
-              const thumbnail = project.thumbnail ?? project.heroImage;
+              const thumbnail = project.thumbnail;
               return (
                 <Link
                   key={project.slug}

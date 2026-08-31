@@ -16,25 +16,42 @@ mechanics if anything here is ambiguous.
 ## Workflow
 
 1. **Gather inputs.** From the user's message plus whatever you ask for,
-   collect: project name, client, role, year, and rough notes on the
-   challenge and result (bullet points are fine — you're drafting the prose,
-   not transcribing it). For `category`, check the existing values across
-   `content/projects/entries/*.md` first
+   collect: project name, client, role, year, and rough notes on the problem
+   and goal (for the Overview section) and the result (bullet points are
+   fine — you're drafting the prose, not transcribing it). For `category`,
+   check the existing values across `content/projects/entries/*.md` first
    (`grep -h '^category:' content/projects/entries/*.md`)
    and reuse one if it fits; only introduce a new category if the user's
-   project genuinely doesn't match any existing one, and say so. Ask for
-   image file paths (a hero image, plus up to 2 gallery images) if not
-   already given — this skill expects paths to files already on disk, not
-   pasted images.
+   project genuinely doesn't match any existing one, and say so.
 
-2. **Draft the copy.** Write `tagline`, `description`, `challenge`, `result`
-   in the site's existing voice — short, concrete, outcome-focused. Match the
-   tone of `content/projects/soulmates-ai.md` (read it as a live example) and
-   the README's Acme example: state the situation, the specific tension/gap,
-   and the concrete outcome — no generic marketing filler. Show the drafted
-   copy to the user before writing anything to disk; revise on their
-   feedback. Don't skip this approval step even if the user's notes were
-   detailed.
+   Also ask about the following — all optional, and it's fine for the user
+   to have none of them ready:
+   - `timeline`, `team`, `platform` for the header meta row.
+   - Process steps: a short list of phases (title + rough notes per phase),
+     each optionally with an image.
+   - Key decisions: notable choices worth calling out (title + rough notes
+     per decision).
+   - Stats: short result metrics (a value like `"27%"` or `"6"` plus a label).
+
+   Ask for image file paths (a hero image, plus any final-design images and
+   any per-process-step images) if not already given — this skill expects
+   paths to files already on disk, not pasted images.
+
+2. **Draft the copy.** Write `tagline`, `description`, `problem`, `goal`,
+   `result`, plus a description for each `process` step and each
+   `keyDecisions` entry, in the site's existing voice — short, concrete,
+   outcome-focused. Match the tone of `content/projects/soulmates-ai.md`
+   (read it as a live example) and the README's Acme example: state the
+   situation, the specific tension/gap, and the concrete outcome — no
+   generic marketing filler. Show the drafted copy to the user before
+   writing anything to disk; revise on their feedback. Don't skip this
+   approval step even if the user's notes were detailed.
+
+   `process`, `keyDecisions`, `finalDesigns`, and `stats` are all optional
+   and unbounded — if the user has no content for one of them, just omit
+   the field entirely rather than inventing filler content or asking
+   repeatedly. A project with none of them is a completely valid, fully
+   rendering page.
 
 3. **Resolve the slug.** Kebab-case the project name (lowercase, hyphenated).
    Check `content/projects/entries/` for a collision; if one exists, ask the
@@ -52,19 +69,25 @@ mechanics if anything here is ambiguous.
      screenshot, or something absurdly large. Flag anything that looks off
      and ask before proceeding rather than silently placing it.
    - Copy (don't move, unless the source is obviously a scratch/download
-     location the user won't miss it from) into `public/images/` as
-     `<slug>-hero.<ext>`, `<slug>-gallery-1.<ext>`, `<slug>-gallery-2.<ext>` —
-     matching the flat, descriptive naming already used there
-     (`work-sample-soulmates.png`, `about-photo.png`).
-   - The gallery has exactly 2 slots. If the user gives more than 2 gallery
-     images, ask which 2 to use. If they give 0 or 1, that's fine — missing
-     slots render a placeholder on the live page, no field needed for them.
+     location the user won't miss it from) into `public/images/`, matching
+     the flat, descriptive naming already used there
+     (`work-sample-soulmates.png`, `about-photo.png`):
+     - Hero: `<slug>-hero.<ext>`.
+     - Final designs: `<slug>-final-1.<ext>`, `<slug>-final-2.<ext>`, ... —
+       unbounded, one file per image the user gives you, in the order they
+       should appear. No cap, no need to ask which ones to use.
+     - Per-process-step images (optional): `<slug>-process-<n>.<ext>`,
+       where `<n>` matches that step's position in the `process` list. Only
+       create this for steps that actually have an image — leave the
+       `image` key out of a step's YAML entirely when there isn't one.
 
 6. **Write `content/projects/entries/<slug>.md`.** Follow the field list, order, and
    YAML style in `content/projects/README.md` exactly — folded `>-` block
-   style for `description`/`challenge`/`result`, `year` quoted as a string,
-   `heroImage`/`gallery` as `/images/...` paths. No markdown body content;
-   this system only reads frontmatter.
+   style for `description`/`problem`/`goal`/`result` and process/key-decision
+   descriptions, `year` quoted as a string, `heroImage`/`finalDesigns`/
+   per-step `image` as `/images/...` paths, `process`/`keyDecisions`/`stats`
+   as YAML lists of objects. No markdown body content; this system only
+   reads frontmatter.
 
 7. **Verify.** Run `next build` (or at minimum load the new file through
    `gray-matter` in a one-off Node script) to catch YAML errors immediately —
@@ -81,9 +104,10 @@ mechanics if anything here is ambiguous.
 
 ## Notes
 
-- This is a small, fixed content system — resist adding new frontmatter
-  fields, a markdown-body rendering path, or other structural changes as
-  part of this skill. If the user wants the schema itself extended, that's a
-  separate, explicit task.
+- This is a fixed content system — the full field set is documented in
+  `content/projects/README.md`. Resist adding frontmatter fields beyond that
+  list, a markdown-body rendering path, or other structural changes as part
+  of this skill. If the user wants the schema itself extended further,
+  that's a separate, explicit task.
 - Never delete or reorder existing project files as a side effect of adding
   a new one.

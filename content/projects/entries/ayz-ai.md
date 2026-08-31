@@ -12,10 +12,10 @@ client: Ayzenberg
 role: Product Designer
 year: "2025"
 heroImage: /images/ayz-ai-hero.png
-gallery:
+finalDesigns:
   - /images/ayz-ai-gallery-1.png
   - /images/ayz-ai-gallery-2.png
-challenge: >-
+problem: >-
   Marketers and creatives needed a single AI assistant flexible enough to
   handle unpredictable LLM output, a growing tool library, and full
   agent-building controls — across desktop and mobile — without the
