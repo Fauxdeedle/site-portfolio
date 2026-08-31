@@ -1,8 +1,8 @@
 import styles from "./ProcessStep.module.css";
 
-export default function ProcessStep({ title, description, image }) {
+export default function ProcessStep({ title, description, image, className = "", ...rest }) {
   return (
-    <div className={styles.step}>
+    <div className={`${styles.step} ${className}`} {...rest}>
       <div className={styles.text}>
         <span className={styles.title}>{title}</span>
         <span className={styles.description}>{description}</span>
