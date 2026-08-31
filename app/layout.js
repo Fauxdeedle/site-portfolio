@@ -1,8 +1,8 @@
-import { Knewave, Barlow, Barlow_Condensed, Inter } from "next/font/google";
+import { Shantell_Sans, Barlow, Barlow_Condensed, Inter } from "next/font/google";
 import "./globals.css";
 
-const knewave = Knewave({
-  weight: "400",
+const shantellSans = Shantell_Sans({
+  weight: "800",
   subsets: ["latin"],
   variable: "--font-display",
   display: "swap",
@@ -39,7 +39,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${knewave.variable} ${barlow.variable} ${barlowCondensed.variable} ${inter.variable}`}
+      className={`${shantellSans.variable} ${barlow.variable} ${barlowCondensed.variable} ${inter.variable}`}
     >
       <body>{children}</body>
     </html>
