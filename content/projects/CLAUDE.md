@@ -51,19 +51,26 @@ from.
 `heroImage` is the big image on the `/work/[slug]` detail page. `thumbnail`
 (optional) is the image used for the homepage/portfolio card (both the
 featured card and the two teaser cards, in `app/page.js` and
-`app/portfolio/page.js`). When `thumbnail` is unset, those cards fall back to
-`heroImage` (`project.thumbnail ?? project.heroImage`), so most projects only
-need to set one field; `thumbnail` is only needed when the homepage image
-should differ from the detail-page hero. Both are handled the same way as any
-other frontmatter field — no normalization in `lib/projects.js`, unlike
-`gallery`.
+`app/portfolio/page.js`). The `thumbnail ?? heroImage` fallback is normalized
+once in `lib/projects.js` (`thumbnail: data.thumbnail ?? data.heroImage`), so
+every call site just reads `project.thumbnail` directly — most projects only
+need to set `heroImage`; `thumbnail` is only needed when the homepage image
+should differ from the detail-page hero.
 
-## Gallery
+## Unbounded list fields
 
-The detail page has a fixed 2-slot gallery layout. `gallery` is an optional
-frontmatter array of `/images/...` paths (0–2 used); the loader normalizes a
-missing field to `[]`. Missing slots render `ImagePlaceholder` — see the
-fallback logic in `app/work/[slug]/page.js`.
+`finalDesigns` (image gallery, replaces the old fixed 2-slot `gallery`),
+`process` (steps, each `{ title, description, image? }`), `keyDecisions`
+(each `{ title, description }`), and `stats` (each `{ value, label }`) are
+all optional frontmatter arrays; the loader normalizes a missing field to
+`[]` for each. `app/work/[slug]/page.js` renders each section only when its
+array is non-empty (or, for the Overview section, when `problem`/`goal` is
+set) — a project with none of these set simply shows fewer sections, no
+placeholder chrome. There's no per-item validation on the nested object
+shapes, consistent with this file's failure-mode philosophy below: a
+malformed entry (e.g. a `process` item missing `title`) renders `undefined`
+rather than throwing, since these are infrequent hand-authored edits, not
+user input.
 
 ## Failure mode
 

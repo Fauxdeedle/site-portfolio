@@ -1,6 +1,9 @@
 import { notFound } from "next/navigation";
 import ButtonLink from "@/components/ButtonLink";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
+import ProcessStep from "@/components/ProcessStep";
+import KeyDecisionCard from "@/components/KeyDecisionCard";
+import StatTile from "@/components/StatTile";
 import { projects, getProject, getNextProject } from "@/lib/projects";
 import styles from "./page.module.css";
 
@@ -29,6 +32,18 @@ export default async function ProjectPage({ params, searchParams }) {
   const homeHref = fromPortfolio ? "/portfolio" : "/";
   const nextQuery = fromPortfolio ? "?from=portfolio" : "";
 
+  const metaItems = [
+    { label: "Client", value: project.client },
+    { label: "Role", value: project.role },
+    { label: "Year", value: project.year },
+    { label: "Timeline", value: project.timeline },
+    { label: "Team", value: project.team },
+    { label: "Platform", value: project.platform },
+  ].filter((item) => item.value);
+
+  const hasOverview = Boolean(project.problem || project.goal);
+  const hasResults = project.stats.length > 0 || Boolean(project.result);
+
   return (
     <div className={styles.container}>
       <div className={styles.back}>
@@ -56,47 +71,93 @@ export default async function ProjectPage({ params, searchParams }) {
           <span className={styles.tagline}>{project.tagline}</span>
         </div>
         <div className={styles.meta}>
-          <div>
-            <div className={styles.metaLabel}>Client</div>
-            <div className={styles.metaValue}>{project.client}</div>
-          </div>
-          <div>
-            <div className={styles.metaLabel}>Role</div>
-            <div className={styles.metaValue}>{project.role}</div>
-          </div>
-          <div>
-            <div className={styles.metaLabel}>Year</div>
-            <div className={styles.metaValue}>{project.year}</div>
-          </div>
+          {metaItems.map((item) => (
+            <div key={item.label}>
+              <div className={styles.metaLabel}>{item.label}</div>
+              <div className={styles.metaValue}>{item.value}</div>
+            </div>
+          ))}
         </div>
       </div>
 
-      <div className={styles.copyBlock}>
-        <span className={styles.sectionHeading}>The challenge</span>
-        <span className={styles.body}>{project.challenge}</span>
-      </div>
-
-      <div className={styles.gallery}>
-        {[0, 1].map((i) => (
-          <div className={styles.galleryItem} key={i}>
-            {project.gallery[i] ? (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img
-                src={project.gallery[i]}
-                alt={`${project.name} process ${i + 1}`}
-                className={styles.galleryImage}
-              />
-            ) : (
-              <ImagePlaceholder label="Process / gallery image" radius={16} />
+      {hasOverview && (
+        <div className={styles.copyBlock}>
+          <span className={styles.sectionHeading}>Overview</span>
+          <div className={styles.overviewRow}>
+            {project.problem && (
+              <div className={styles.overviewBox}>
+                <span className={styles.overviewLabel}>The problem</span>
+                <span className={styles.body}>{project.problem}</span>
+              </div>
+            )}
+            {project.problem && project.goal && (
+              <span className={styles.overviewArrow}>→</span>
+            )}
+            {project.goal && (
+              <div className={styles.overviewBox}>
+                <span className={styles.overviewLabel}>The goal</span>
+                <span className={styles.body}>{project.goal}</span>
+              </div>
             )}
           </div>
-        ))}
-      </div>
+        </div>
+      )}
 
-      <div className={`${styles.copyBlock} ${styles.noTop}`}>
-        <span className={styles.sectionHeading}>The result</span>
-        <span className={styles.body}>{project.result}</span>
-      </div>
+      {project.process.length > 0 && (
+        <div className={`${styles.copyBlock} ${styles.noTop}`}>
+          <span className={styles.sectionHeading}>Process</span>
+          <div className={styles.processList}>
+            {project.process.map((step, i) => (
+              <ProcessStep key={i} {...step} />
+            ))}
+          </div>
+        </div>
+      )}
+
+      {project.keyDecisions.length > 0 && (
+        <div className={`${styles.copyBlock} ${styles.noTop}`}>
+          <span className={styles.sectionHeading}>Key decisions</span>
+          <div className={styles.decisionsGrid}>
+            {project.keyDecisions.map((decision, i) => (
+              <KeyDecisionCard key={i} {...decision} />
+            ))}
+          </div>
+        </div>
+      )}
+
+      {project.finalDesigns.length > 0 && (
+        <>
+          <div className={`${styles.copyBlock} ${styles.noTop} ${styles.noBottom}`}>
+            <span className={styles.sectionHeading}>Final designs</span>
+          </div>
+          <div className={styles.finalDesigns}>
+            {project.finalDesigns.map((src, i) => (
+              <div className={styles.finalDesignItem} key={src}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={src}
+                  alt={`${project.name} final design ${i + 1}`}
+                  className={styles.finalDesignImage}
+                />
+              </div>
+            ))}
+          </div>
+        </>
+      )}
+
+      {hasResults && (
+        <div className={`${styles.copyBlock} ${styles.noTop}`}>
+          <span className={styles.sectionHeading}>Results</span>
+          {project.stats.length > 0 && (
+            <div className={styles.statsRow}>
+              {project.stats.map((stat, i) => (
+                <StatTile key={i} {...stat} />
+              ))}
+            </div>
+          )}
+          {project.result && <span className={styles.body}>{project.result}</span>}
+        </div>
+      )}
 
       <div className={styles.next}>
         <span className={styles.nextLabel}>Next project</span>

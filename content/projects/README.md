@@ -10,7 +10,8 @@ The filename (minus `.md`) becomes the project's URL —
    to your new project's slug (lowercase, hyphenated, e.g. `acme-rebrand.md`).
 2. Fill in the fields below.
 3. Drop any images into `/public/images/` and reference them by path
-   (e.g. `/images/acme-hero.png`) in `heroImage` / `thumbnail` / `gallery`.
+   (e.g. `/images/acme-hero.png`) in `heroImage` / `thumbnail` / `finalDesigns`
+   / per-`process`-step `image`.
 4. Commit and deploy.
 
 **`order` is what controls where a project appears** — not filename or file
@@ -39,18 +40,51 @@ without touching `order` or the main homepage.
 | `year` | string | yes | Quote it, e.g. `year: "2026"` |
 | `heroImage` | string | no | `/images/...` path; the big image on the `/work/[slug]` detail page. Omit for a "coming soon" project |
 | `thumbnail` | string | no | `/images/...` path; the image used for the homepage/portfolio card (featured + teaser). Falls back to `heroImage` if unset — only set this when you want a different image on the homepage than on the detail page |
-| `gallery` | list of strings | no | 0–2 `/images/...` paths; the detail page has two gallery slots — any missing slot shows a placeholder |
-| `challenge` | string | yes | "The challenge" section copy |
-| `result` | string | yes | "The result" section copy |
+| `problem` | string | yes | "The problem" box in the Overview section |
+| `goal` | string | no | "The goal" box in the Overview section, shown next to `problem` with an arrow between them. Omit and only `problem` renders (no arrow) |
+| `timeline` | string | no | Shown in the header meta row, e.g. `"1+ years, ongoing"` |
+| `team` | string | no | Shown in the header meta row, e.g. `"2 designers, 5-7 developers, 1 PM"` |
+| `platform` | string | no | Shown in the header meta row, e.g. `Web app` |
+| `process` | list of objects | no | Numbered process steps — see shape below. Omit entirely to skip the Process section |
+| `keyDecisions` | list of objects | no | Notable decisions — see shape below. Omit entirely to skip the Key Decisions section |
+| `finalDesigns` | list of strings | no | Any number of `/images/...` paths, rendered as a gallery. Omit or leave empty to skip the Final Designs section |
+| `stats` | list of objects | no | Result metrics — see shape below. Omit entirely to skip the stat tiles (the `result` paragraph still renders on its own) |
+| `result` | string | yes | Summary paragraph in the Results section, shown below any `stats` tiles |
 
-Multi-line text fields (`description`, `challenge`, `result`) use YAML's
-folded block style — start the value on the next line, indented, prefixed
-with `>-`:
+Multi-line text fields (`description`, `problem`, `goal`, `result`, and each
+`process`/`keyDecisions` item's `description`) use YAML's folded block
+style — start the value on the next line, indented, prefixed with `>-`:
 
 ```yaml
-challenge: >-
+problem: >-
   First line of the paragraph continues here
   and here, all folded into one paragraph.
+```
+
+`process`, `keyDecisions`, and `stats` are lists of objects (unbounded —
+use as many entries as the project needs):
+
+```yaml
+process:
+  - title: Research & Discovery
+    description: >-
+      Deep-dived into the problem space and identified the primary
+      audience through early interviews.
+    image: /images/acme-process-1.png   # optional — omit the key for steps with no image
+  - title: Design & Validation
+    description: >-
+      Mapped out flows, built designs, and tested with real users to
+      validate and iterate.
+keyDecisions:
+  - title: Toolbar-based navigation
+    description: >-
+      Inspired by tools like Figma and Photoshop, this gave the app
+      room to scale without breaking existing mental models.
+stats:
+  - value: "27%"
+    label: Drop-off rate post-launch
+  - value: "6"
+    label: Enterprise users
 ```
 
 ## Full example
@@ -67,15 +101,38 @@ description: >-
 client: Acme Co
 role: Branding + Web
 year: "2026"
+timeline: 3 months
+team: 1 designer, 1 developer
+platform: Web app
 heroImage: /images/acme-hero.png
 thumbnail: /images/acme-thumb.png
-gallery:
-  - /images/acme-gallery-1.png
-  - /images/acme-gallery-2.png
-challenge: >-
+problem: >-
   Acme's identity hadn't changed in twenty years and no longer matched
-  the product line. They needed a refresh that felt current without
-  losing what long-time customers recognized.
+  the product line.
+goal: >-
+  Launch a refresh that felt current without losing what long-time
+  customers recognized.
+process:
+  - title: Research & Discovery
+    description: >-
+      Audited the existing brand and interviewed long-time customers to
+      find what was worth keeping.
+  - title: Design & Validation
+    description: >-
+      Explored directions and tested the strongest ones with the sales
+      team before committing.
+    image: /images/acme-process-2.png
+keyDecisions:
+  - title: Kept the original wordmark
+    description: >-
+      Customer research showed strong recognition of the existing
+      wordmark, so the refresh kept it and rebuilt everything around it.
+finalDesigns:
+  - /images/acme-final-1.png
+  - /images/acme-final-2.png
+stats:
+  - value: "3x"
+    label: Increase in inbound leads
 result: >-
   The new identity rolled out across packaging, the website, and trade
   show materials within a single quarter.

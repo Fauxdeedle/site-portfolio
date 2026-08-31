@@ -11,8 +11,8 @@ client: Soulmates.ai
 role: Branding + Print
 year: "2026"
 heroImage: /images/work-sample-soulmates.png
-gallery: []
-challenge: >-
+finalDesigns: []
+problem: >-
   Soulmates.ai had a name and a product, but no visual identity to match its
   ambition. They needed a brand system that felt warm and human rather than
   clinical — plus a launch website and print collateral for their first

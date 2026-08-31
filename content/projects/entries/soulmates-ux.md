@@ -13,10 +13,10 @@ role: Product Designer
 year: "2025-2026"
 heroImage: /images/soulmates-ux-hero.png
 thumbnail: /images/soulmates-thumbnail.png
-gallery:
+finalDesigns:
   - /images/soulmates-ux-gallery-1.png
   - /images/soulmates-ux-gallery-2.png
-challenge: >-
+problem: >-
   Traditional audience testing was slow, expensive, and inaccessible to most
   teams — and nobody on the team had designed for AI before. The chat
   interface had to handle file uploads, persona selection, multi-step tool
