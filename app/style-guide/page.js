@@ -18,6 +18,45 @@ import styles from "./page.module.css";
 
 const ICON_NAMES = ["graphic", "branding", "websites", "chevron-down"];
 
+const HEADINGS = [
+  { tag: "h1", className: "h1", size: "text-display-lg / 64px" },
+  { tag: "h2", className: "h2", size: "text-display-md / 32px" },
+  { tag: "h3", className: "h3", size: "text-heading-lg / 32px" },
+  { tag: "h4", className: "h4", size: "text-heading-md / 24px" },
+  { tag: "h5", className: "h5", size: "text-heading-sm / 20px" },
+  { tag: "h6", className: "h6", size: "text-subhead / 22px" },
+];
+
+const BODY_STYLES = [
+  { label: "Body LG", className: "bodyLg", size: "text-body-lg / 20px" },
+  { label: "Body MD", className: "bodyMd", size: "text-body-md / 16px" },
+  { label: "Body SM", className: "bodySm", size: "text-body-sm / 12px" },
+];
+
+const SPACING_SCALE = [
+  { name: "space-1", value: "8px" },
+  { name: "space-2", value: "10px" },
+  { name: "space-3", value: "12px" },
+  { name: "space-4", value: "16px" },
+  { name: "space-5", value: "19px" },
+  { name: "space-6", value: "24px" },
+  { name: "space-7", value: "32px" },
+  { name: "space-8", value: "72px" },
+  { name: "space-9", value: "120px" },
+];
+
+const COLORS = [
+  { name: "ink", value: "rgb(29, 27, 27)" },
+  { name: "ink-black", value: "rgb(0, 0, 0)" },
+  { name: "paper", value: "rgb(255, 253, 250)" },
+  { name: "white", value: "rgb(255, 255, 255)" },
+  { name: "gray-ink", value: "rgb(51, 48, 48)" },
+  { name: "gray-input", value: "rgb(217, 217, 217)" },
+  { name: "gray-warm", value: "rgb(217, 214, 210)" },
+  { name: "gray-solid", value: "rgb(83, 83, 83)" },
+  { name: "shadow-hard", value: "rgb(30, 30, 30)" },
+];
+
 function Section({ title, children }) {
   return (
     <section className={styles.section}>
@@ -31,6 +70,47 @@ export default function StyleGuidePage() {
   return (
     <main className={styles.page}>
       <h1 className={styles.pageTitle}>Style Guide</h1>
+
+      <Section title="Typography">
+        <div className={styles.typeRow}>
+          {HEADINGS.map(({ tag: Tag, className, size }) => (
+            <div key={className} className={styles.typeSample}>
+              <span className={styles.typeLabel}>{Tag}</span>
+              <Tag className={styles[className]}>The quick brown fox</Tag>
+              <span className={styles.typeMeta}>{size}</span>
+            </div>
+          ))}
+          {BODY_STYLES.map(({ label, className, size }) => (
+            <div key={className} className={styles.typeSample}>
+              <span className={styles.typeLabel}>{label}</span>
+              <p className={styles[className]}>The quick brown fox jumps over the lazy dog.</p>
+              <span className={styles.typeMeta}>{size}</span>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      <Section title="Spacing">
+        <div className={styles.spacingList}>
+          {SPACING_SCALE.map(({ name, value }) => (
+            <div key={name} className={styles.spacingRow}>
+              <span className={styles.spacingLabel}>--{name}</span>
+              <div className={styles.spacingBar} style={{ width: value }} />
+              <span className={styles.spacingValue}>{value}</span>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      <Section title="Colors">
+        {COLORS.map(({ name, value }) => (
+          <div key={name} className={styles.colorSwatch}>
+            <div className={styles.colorBlock} style={{ background: value }} />
+            <span className={styles.colorName}>--{name}</span>
+            <span className={styles.colorValue}>{value}</span>
+          </div>
+        ))}
+      </Section>
 
       <Section title="Button">
         <Button size="sm">Small</Button>
