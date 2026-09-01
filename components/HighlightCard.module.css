@@ -1,7 +1,8 @@
 .card {
   display: flex;
   align-items: stretch;
-  flex: 1 1 480px;
+  flex: 1 1 auto;
+  min-width: 480px;
   border-radius: var(--radius-lg);
   overflow: hidden;
   border: var(--stroke-heavy) solid var(--ink);
@@ -46,6 +47,7 @@
 @media (max-width: 560px) {
   .card {
     flex-direction: column;
+    min-width: 0;
   }
 
   .half {
