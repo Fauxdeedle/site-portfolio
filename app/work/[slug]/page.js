@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import ButtonLink from "@/components/ButtonLink";
 import HighlightCard from "@/components/HighlightCard";
+import InfoTile from "@/components/InfoTile";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
 import ProcessStep from "@/components/ProcessStep";
 import KeyDecisionCard from "@/components/KeyDecisionCard";
@@ -77,10 +78,7 @@ export default async function ProjectPage({ params, searchParams }) {
         </div>
         <div className={styles.meta}>
           {metaItems.map((item) => (
-            <div key={item.label}>
-              <div className={styles.metaLabel}>{item.label}</div>
-              <div className={styles.metaValue}>{item.value}</div>
-            </div>
+            <InfoTile key={item.label} label={item.label} value={item.value} />
           ))}
         </div>
       </div>

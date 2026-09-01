@@ -1,0 +1,24 @@
+.tile {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.label {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: var(--paper);
+  background: var(--ink-black);
+  padding: 4px 12px;
+  border-radius: var(--radius-xl);
+}
+
+.value {
+  font-family: var(--font-subhead);
+  font-weight: 700;
+  font-size: clamp(24px, 3vw, 32px);
+  color: var(--ink-black);
+}

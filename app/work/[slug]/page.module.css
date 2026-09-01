@@ -62,21 +62,6 @@
   flex-wrap: wrap;
 }
 
-.metaLabel {
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 14px;
-  text-transform: uppercase;
-  color: var(--ink);
-}
-
-.metaValue {
-  font-family: var(--font-body);
-  font-size: 16px;
-  color: var(--ink-black);
-  margin-top: 4px;
-}
-
 .copyBlock {
   padding: 56px 120px;
   box-sizing: border-box;

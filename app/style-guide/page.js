@@ -5,6 +5,7 @@ import Dropdown from "@/components/Dropdown";
 import FormDropdown from "@/components/FormDropdown";
 import FormField from "@/components/FormField";
 import HighlightCard from "@/components/HighlightCard";
+import InfoTile from "@/components/InfoTile";
 import HomeCard from "@/components/HomeCard";
 import Icon from "@/components/Icon";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
@@ -98,6 +99,12 @@ export default function StyleGuidePage() {
             },
           ]}
         />
+      </Section>
+
+      <Section title="InfoTile">
+        <InfoTile label="Role" value="Product Designer" />
+        <InfoTile label="Year" value="2026" />
+        <InfoTile label="Timeline" value="8 weeks" />
       </Section>
 
       <Section title="StatTile">
