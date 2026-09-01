@@ -109,45 +109,6 @@
   max-width: 820px;
 }
 
-/* Overview */
-.overviewRow {
-  display: flex;
-  align-items: stretch;
-  gap: var(--space-7);
-  flex-wrap: wrap;
-}
-
-.overviewBox {
-  flex: 1 1 320px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 24px;
-  border-radius: var(--radius-lg);
-  background: var(--paper);
-  box-shadow: var(--outline-thick);
-  box-sizing: border-box;
-}
-
-.overviewLabel {
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 14px;
-  text-transform: uppercase;
-  color: var(--ink);
-}
-
-.overviewArrow {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 32px;
-  color: var(--ink);
-  flex: 0 0 auto;
-}
-
 /* Process */
 .processList {
   display: flex;

@@ -4,6 +4,7 @@ import ContactForm from "@/components/ContactForm";
 import Dropdown from "@/components/Dropdown";
 import FormDropdown from "@/components/FormDropdown";
 import FormField from "@/components/FormField";
+import HighlightCard from "@/components/HighlightCard";
 import HomeCard from "@/components/HomeCard";
 import Icon from "@/components/Icon";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
@@ -73,6 +74,29 @@ export default function StyleGuidePage() {
         <KeyDecisionCard
           title="Why we chose this"
           description="A short explanation of the decision and its impact on the project."
+        />
+      </Section>
+
+      <Section title="HighlightCard">
+        <HighlightCard
+          items={[
+            {
+              label: "The problem",
+              body: "Users couldn't find the pricing page and dropped off before signing up.",
+            },
+            {
+              label: "The goal",
+              body: "Surface pricing earlier in the flow and cut sign-up drop-off in half.",
+            },
+          ]}
+        />
+        <HighlightCard
+          items={[
+            {
+              label: "The takeaway",
+              body: "A single highlighted block, for anywhere one callout needs to stand out on its own.",
+            },
+          ]}
         />
       </Section>
 

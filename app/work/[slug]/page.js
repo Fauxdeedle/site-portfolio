@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import ButtonLink from "@/components/ButtonLink";
+import HighlightCard from "@/components/HighlightCard";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
 import ProcessStep from "@/components/ProcessStep";
 import KeyDecisionCard from "@/components/KeyDecisionCard";
@@ -41,7 +42,11 @@ export default async function ProjectPage({ params, searchParams }) {
     { label: "Platform", value: project.platform },
   ].filter((item) => item.value);
 
-  const hasOverview = Boolean(project.problem || project.goal);
+  const overviewItems = [
+    project.problem && { label: "The problem", body: project.problem },
+    project.goal && { label: "The goal", body: project.goal },
+  ].filter(Boolean);
+  const hasOverview = overviewItems.length > 0;
   const hasResults = project.stats.length > 0 || Boolean(project.result);
 
   return (
@@ -83,23 +88,7 @@ export default async function ProjectPage({ params, searchParams }) {
       {hasOverview && (
         <div className={styles.copyBlock}>
           <span className={styles.sectionHeading}>Overview</span>
-          <div className={styles.overviewRow}>
-            {project.problem && (
-              <div className={styles.overviewBox}>
-                <span className={styles.overviewLabel}>The problem</span>
-                <span className={styles.body}>{project.problem}</span>
-              </div>
-            )}
-            {project.problem && project.goal && (
-              <span className={styles.overviewArrow}>→</span>
-            )}
-            {project.goal && (
-              <div className={styles.overviewBox}>
-                <span className={styles.overviewLabel}>The goal</span>
-                <span className={styles.body}>{project.goal}</span>
-              </div>
-            )}
-          </div>
+          <HighlightCard items={overviewItems} />
         </div>
       )}
 
