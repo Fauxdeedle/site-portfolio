@@ -4,7 +4,7 @@
   flex: 1 1 480px;
   border-radius: var(--radius-lg);
   overflow: hidden;
-  box-shadow: var(--outline-thick);
+  border: var(--stroke-heavy) solid var(--ink);
   box-sizing: border-box;
 }
 
