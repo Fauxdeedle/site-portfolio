@@ -32,15 +32,18 @@ process:
       Deep-dived into AI capabilities and explored how 20+ years of agency
       data could be leveraged. The marketing team's enthusiasm during this
       phase organically identified them as the primary audience.
+    image: /images/placeholder.png
   - title: Design & Validation
     description: >-
       Mapped out tool functionality and user interaction flows, built
       designs, and tested directly with the marketing team to validate and
       iterate.
+    image: /images/placeholder.png
   - title: Consolidation & Launch
     description: >-
       Brought a collection of individual tools together into a unified app
       experience and shipped with continued feature expansion post-launch.
+    image: /images/placeholder.png
 keyDecisions:
   - title: Toolbar-based navigation
     description: >-
