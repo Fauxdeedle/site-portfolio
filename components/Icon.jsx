@@ -21,7 +21,14 @@ const PATHS = {
   "chevron-down": <path d="M6 9l6 6 6-6" />,
 };
 
-export default function Icon({ name = "graphic", size = 24, strokeWidth = 1.6, style, ...rest }) {
+export default function Icon({
+  name = "graphic",
+  size = 24,
+  strokeWidth = 1.6,
+  style,
+  className = "",
+  ...rest
+}) {
   const glyph = PATHS[name] || PATHS.graphic;
   return (
     <svg
@@ -33,6 +40,7 @@ export default function Icon({ name = "graphic", size = 24, strokeWidth = 1.6, s
       strokeWidth={strokeWidth}
       strokeLinecap="round"
       strokeLinejoin="round"
+      className={className}
       style={{ color: "var(--ink)", flexShrink: 0, ...style }}
       {...rest}
     >

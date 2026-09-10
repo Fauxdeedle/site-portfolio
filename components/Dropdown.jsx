@@ -9,12 +9,14 @@ export default function Dropdown({
   options = ["option 01", "option 02", "option 03", "option 04"],
   name,
   onChange,
+  className = "",
+  ...rest
 }) {
   const [open, setOpen] = useState(false);
   const [selected, setSelected] = useState(null);
 
   return (
-    <div className={styles.dropdown}>
+    <div className={`${styles.dropdown} ${className}`} {...rest}>
       <button
         type="button"
         onClick={() => setOpen((o) => !o)}

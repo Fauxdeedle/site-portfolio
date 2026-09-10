@@ -16,7 +16,7 @@ const barlow = Barlow({
 });
 
 const barlowCondensed = Barlow_Condensed({
-  weight: ["400", "500"],
+  weight: ["400", "500", "700"],
   subsets: ["latin"],
   variable: "--font-subhead",
   display: "swap",

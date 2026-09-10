@@ -1,6 +1,6 @@
 ---
 name: Project Three
-order: 3
+order: 4
 category: websites
 tagline: Project details coming soon
 description: Case study write-up in progress.

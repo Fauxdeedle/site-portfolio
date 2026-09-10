@@ -1,6 +1,6 @@
 ---
 name: Project Two
-order: 2
+order: 3
 category: branding
 tagline: Project details coming soon
 description: Case study write-up in progress.
