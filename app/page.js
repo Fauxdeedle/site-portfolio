@@ -84,7 +84,11 @@ export default function Home() {
                     <ImagePlaceholder label={`Drop ${project.name.toLowerCase()} image`} />
                   )}
                 </div>
-                <span className={styles.teaserName}>{project.name}</span>
+                <div className={styles.teaserBody}>
+                  <span className={styles.teaserName}>{project.name}</span>
+                  <span className={styles.teaserDescription}>{project.description}</span>
+                  <ButtonLink href={`/work/${project.slug}`}>See more</ButtonLink>
+                </div>
               </Link>
             );
           })}
