@@ -73,7 +73,7 @@ export default async function ProjectPage({ params, searchParams }) {
 
       <div className={styles.headerRow}>
         <div className={styles.titleBlock}>
-          <span className={styles.title}>{project.name}</span>
+          <h1 className={styles.title}>{project.name}</h1>
           <span className={styles.tagline}>{project.tagline}</span>
         </div>
         <div className={styles.meta}>
@@ -85,14 +85,14 @@ export default async function ProjectPage({ params, searchParams }) {
 
       {hasOverview && (
         <div className={styles.copyBlock}>
-          <span className={styles.sectionHeading}>Overview</span>
+          <h2 className={styles.sectionHeading}>Overview</h2>
           <HighlightCard items={overviewItems} />
         </div>
       )}
 
       {project.process.length > 0 && (
         <div className={`${styles.copyBlock} ${styles.noTop}`}>
-          <span className={styles.sectionHeading}>Process</span>
+          <h2 className={styles.sectionHeading}>Process</h2>
           <div className={styles.processList}>
             {project.process.map((step, i) => (
               <ProcessStep key={i} {...step} />
@@ -103,7 +103,7 @@ export default async function ProjectPage({ params, searchParams }) {
 
       {project.keyDecisions.length > 0 && (
         <div className={`${styles.copyBlock} ${styles.noTop}`}>
-          <span className={styles.sectionHeading}>Key decisions</span>
+          <h2 className={styles.sectionHeading}>Key decisions</h2>
           <div className={styles.decisionsGrid}>
             {project.keyDecisions.map((decision, i) => (
               <KeyDecisionCard key={i} {...decision} />
@@ -115,7 +115,7 @@ export default async function ProjectPage({ params, searchParams }) {
       {project.finalDesigns.length > 0 && (
         <>
           <div className={`${styles.copyBlock} ${styles.noTop} ${styles.noBottom}`}>
-            <span className={styles.sectionHeading}>Final designs</span>
+            <h2 className={styles.sectionHeading}>Final designs</h2>
           </div>
           <div className={styles.finalDesigns}>
             {project.finalDesigns.map((src, i) => (
@@ -134,7 +134,7 @@ export default async function ProjectPage({ params, searchParams }) {
 
       {hasResults && (
         <div className={`${styles.copyBlock} ${styles.noTop}`}>
-          <span className={styles.sectionHeading}>Results</span>
+          <h2 className={styles.sectionHeading}>Results</h2>
           {project.stats.length > 0 && (
             <div className={styles.statsRow}>
               {project.stats.map((stat, i) => (
@@ -149,7 +149,7 @@ export default async function ProjectPage({ params, searchParams }) {
       <div className={styles.next}>
         <span className={styles.nextLabel}>Next project</span>
         <a href={`/work/${next.slug}${nextQuery}`} className={styles.nextLink}>
-          <span className={styles.nextName}>{next.name} →</span>
+          <h4 className={styles.nextName}>{next.name} →</h4>
         </a>
       </div>
     </div>

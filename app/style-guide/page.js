@@ -19,10 +19,10 @@ import styles from "./page.module.css";
 const ICON_NAMES = ["graphic", "branding", "websites", "chevron-down"];
 
 const HEADINGS = [
-  { tag: "h1", className: "h1", size: "text-display-lg / 64px" },
-  { tag: "h2", className: "h2", size: "text-display-md / 32px" },
+  { tag: "h1", className: "h1", size: "clamp(48px, 11vw, 128px)" },
+  { tag: "h2", className: "h2", size: "clamp(32px, 6vw, 64px)" },
   { tag: "h3", className: "h3", size: "text-heading-lg / 32px" },
-  { tag: "h4", className: "h4", size: "text-heading-md / 24px" },
+  { tag: "h4", className: "h4", size: "clamp(28px, 4vw, 40px)" },
   { tag: "h5", className: "h5", size: "text-heading-sm / 20px" },
   { tag: "h6", className: "h6", size: "text-subhead / 22px" },
 ];
@@ -146,7 +146,12 @@ export default function StyleGuidePage() {
       </Section>
 
       <Section title="HomeCard">
-        <HomeCard icon="graphic" title="Graphic & Print" description="Bringing your brand to life." />
+        <HomeCard
+          icon="graphic"
+          title="Graphic & Print"
+          description="Bringing your brand to life."
+          items={["Business cards", "Brochures", "Packaging & Labels", "Posters & Signages"]}
+        />
         <HomeCard icon="branding" title="Branding" description="A voice that sticks." />
         <HomeCard icon="websites" title="Websites" description="Built to convert." />
       </Section>
