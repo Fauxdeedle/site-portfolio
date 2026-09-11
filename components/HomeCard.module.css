@@ -8,12 +8,13 @@
   flex-direction: column;
   gap: 10px;
   padding: 32px 24px;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: flex-start;
   box-sizing: border-box;
   transition: box-shadow 150ms ease, transform 150ms ease;
   flex: 1 1 260px;
   min-width: 220px;
+  height: 340px;
 }
 
 .card:hover {
@@ -22,12 +23,25 @@
 
 .iconWrap {
   display: flex;
-  flex-direction: row;
-  padding: 24px 0;
+  width: 100%;
+  flex: 1 1 auto;
   justify-content: center;
   align-items: center;
-  flex-grow: 1;
-  align-self: stretch;
+}
+
+.iconBox {
+  display: flex;
+  flex-shrink: 0;
+  width: 120px;
+  height: 120px;
+  justify-content: center;
+  align-items: center;
+  transition: width 300ms ease, height 300ms ease;
+}
+
+.card:hover .iconBox {
+  width: 56px;
+  height: 56px;
 }
 
 .title {
@@ -43,5 +57,30 @@
   font-family: var(--font-subhead);
   font-weight: 500;
   font-size: var(--text-body-lg);
+  color: var(--ink);
+}
+
+.list {
+  margin: 0;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: max-height 300ms ease, opacity 200ms ease, transform 300ms ease;
+}
+
+.card:hover .list {
+  max-height: 160px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.listItem {
+  font-family: var(--font-subhead);
+  font-weight: 500;
+  font-size: var(--text-body-md);
   color: var(--ink);
 }

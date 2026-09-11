@@ -146,7 +146,12 @@ export default function StyleGuidePage() {
       </Section>
 
       <Section title="HomeCard">
-        <HomeCard icon="graphic" title="Graphic & Print" description="Bringing your brand to life." />
+        <HomeCard
+          icon="graphic"
+          title="Graphic & Print"
+          description="Bringing your brand to life."
+          items={["Business cards", "Brochures", "Packaging & Labels", "Posters & Signages"]}
+        />
         <HomeCard icon="branding" title="Branding" description="A voice that sticks." />
         <HomeCard icon="websites" title="Websites" description="Built to convert." />
       </Section>
