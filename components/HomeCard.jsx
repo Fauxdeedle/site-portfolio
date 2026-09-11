@@ -12,7 +12,9 @@ export default function HomeCard({
   return (
     <div className={`${styles.card} ${className}`} {...rest}>
       <div className={styles.iconWrap}>
-        <Icon name={icon} size="100%" strokeWidth={1.2} />
+        <div className={styles.iconBox}>
+          <Icon name={icon} size="100%" strokeWidth={1.2} />
+        </div>
       </div>
       <span className={styles.title}>{title}</span>
       <span className={styles.description}>{description}</span>
