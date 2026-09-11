@@ -22,7 +22,7 @@ export default function Portfolio() {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src="/images/hero-illustration.png" alt="" className={styles.heroImage} />
         <div className={styles.heroCopy}>
-          <span className={styles.name}>Dylan Scoble</span>
+          <h1 className={styles.name}>Dylan Scoble</h1>
           <span className={styles.role}>Graphic - Branding - Web design</span>
           <span className={styles.pitch}>
             A selection of branding, print, and web design work — sharing it here
@@ -31,11 +31,11 @@ export default function Portfolio() {
         </div>
         <div className={styles.stats}>
           <div className={styles.stat}>
-            <span className={styles.statNumber}>10 years</span>
+            <h4 className={styles.statNumber}>10 years</h4>
             <span className={styles.statLabel}>in the industry</span>
           </div>
           <div className={styles.stat}>
-            <span className={styles.statNumber}>60+</span>
+            <h4 className={styles.statNumber}>60+</h4>
             <span className={styles.statLabel}>Projects completed</span>
           </div>
         </div>
@@ -43,7 +43,7 @@ export default function Portfolio() {
 
       {featured && (
         <section className={styles.section}>
-          <span className={styles.sectionHeading}>Selected work</span>
+          <h2 className={styles.sectionHeading}>Selected work</h2>
           <Link href={`/work/${featured.slug}?from=portfolio`} className={styles.featured}>
             {featuredThumbnail ? (
               // eslint-disable-next-line @next/next/no-img-element
@@ -95,7 +95,7 @@ export default function Portfolio() {
 
       <section className={`${styles.section} ${styles.about}`}>
         <div className={styles.aboutCopy}>
-          <span className={styles.sectionHeading}>About me</span>
+          <h2 className={styles.sectionHeading}>About me</h2>
           <span className={styles.aboutBody}>
             Ten years in, I still get a kick out of the first sketch turning into a finished
             brand. I work end to end — identity, print, and the website that ties it all
@@ -108,7 +108,7 @@ export default function Portfolio() {
 
       <section className={`${styles.section} ${styles.contact}`}>
         <div className={styles.contactCopy}>
-          <span className={styles.sectionHeading}>Get in touch</span>
+          <h2 className={styles.sectionHeading}>Get in touch</h2>
           <span className={styles.contactBody}>
             Thanks for taking a look — happy to walk through any of this work in more detail.
           </span>

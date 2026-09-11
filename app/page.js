@@ -17,7 +17,7 @@ export default function Home() {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src="/images/hero-illustration.png" alt="" className={styles.heroImage} />
         <div className={styles.heroCopy}>
-          <span className={styles.name}>Dylan Scoble</span>
+          <h1 className={styles.name}>Dylan Scoble</h1>
           <span className={styles.role}>Graphic - Branding - Web design</span>
           <span className={styles.pitch}>
             I help businesses build visual identities and digital experiences that are
@@ -26,18 +26,18 @@ export default function Home() {
         </div>
         <div className={styles.stats}>
           <div className={styles.stat}>
-            <span className={styles.statNumber}>10 years</span>
+            <h4 className={styles.statNumber}>10 years</h4>
             <span className={styles.statLabel}>in the industry</span>
           </div>
           <div className={styles.stat}>
-            <span className={styles.statNumber}>60+</span>
+            <h4 className={styles.statNumber}>60+</h4>
             <span className={styles.statLabel}>Projects completed</span>
           </div>
         </div>
       </section>
 
       <section className={styles.section}>
-        <span className={styles.sectionHeading}>What I do</span>
+        <h2 className={styles.sectionHeading}>What I do</h2>
         <div className={styles.cards}>
           <HomeCard icon="graphic" title="Graphic & Print" description="Bringing your brand to life." />
           <HomeCard icon="branding" title="Branding" description="Bringing your brand to life." />
@@ -46,7 +46,7 @@ export default function Home() {
       </section>
 
       <section className={styles.section}>
-        <span className={styles.sectionHeading}>Some of my work</span>
+        <h2 className={styles.sectionHeading}>Some of my work</h2>
         <Link href={`/work/${featured.slug}`} className={styles.featured}>
           {featuredThumbnail ? (
             // eslint-disable-next-line @next/next/no-img-element
@@ -93,7 +93,7 @@ export default function Home() {
 
       <section className={`${styles.section} ${styles.about}`}>
         <div className={styles.aboutCopy}>
-          <span className={styles.sectionHeading}>About me</span>
+          <h2 className={styles.sectionHeading}>About me</h2>
           <span className={styles.aboutBody}>
             Ten years in, I still get a kick out of the first sketch turning into a finished
             brand. I work end to end — identity, print, and the website that ties it all
@@ -109,7 +109,7 @@ export default function Home() {
           <ContactForm />
         </div>
         <div className={styles.contactCopy}>
-          <span className={styles.sectionHeading}>Let&apos;s work together!</span>
+          <h2 className={styles.sectionHeading}>Let&apos;s work together!</h2>
           <span className={styles.contactBody}>
             Have a project in mind? Tell me a bit about it and I&apos;ll get back to you
             within a couple of days.

@@ -82,6 +82,29 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+h1 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  line-height: 1;
+  color: var(--ink);
+  font-size: clamp(48px, 11vw, 128px);
+}
+
+h2 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  line-height: 1;
+  color: var(--ink);
+  font-size: clamp(32px, 6vw, 64px);
+}
+
+h4 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  color: var(--ink);
+  font-size: clamp(28px, 4vw, 40px);
+}
+
 a {
   color: inherit;
   text-decoration: none;
