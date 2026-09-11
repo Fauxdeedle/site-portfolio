@@ -39,9 +39,24 @@ export default function Home() {
       <section className={styles.section}>
         <h2 className={styles.sectionHeading}>What I do</h2>
         <div className={styles.cards}>
-          <HomeCard icon="graphic" title="Graphic & Print" description="Bringing your brand to life." />
-          <HomeCard icon="branding" title="Branding" description="Bringing your brand to life." />
-          <HomeCard icon="websites" title="Websites" description="Bringing your brand to life." />
+          <HomeCard
+            icon="graphic"
+            title="Graphic & Print"
+            description="Bringing your brand to life."
+            items={["Business cards", "Brochures", "Packaging & Labels", "Posters & Signages"]}
+          />
+          <HomeCard
+            icon="branding"
+            title="Branding"
+            description="Bringing your brand to life."
+            items={["Logo design", "Style guides", "Color & type systems", "Brand collateral"]}
+          />
+          <HomeCard
+            icon="websites"
+            title="Websites"
+            description="Bringing your brand to life."
+            items={["Landing pages", "E-commerce", "CMS integrations", "Ongoing support"]}
+          />
         </div>
       </section>
 
