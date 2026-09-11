@@ -1,7 +1,7 @@
-import { Shantell_Sans, Barlow, Barlow_Condensed, Inter } from "next/font/google";
+import { Baloo_2, Barlow, Barlow_Condensed, Inter } from "next/font/google";
 import "./globals.css";
 
-const shantellSans = Shantell_Sans({
+const baloo2 = Baloo_2({
   weight: "800",
   subsets: ["latin"],
   variable: "--font-display",
@@ -39,7 +39,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${shantellSans.variable} ${barlow.variable} ${barlowCondensed.variable} ${inter.variable}`}
+      className={`${baloo2.variable} ${barlow.variable} ${barlowCondensed.variable} ${inter.variable}`}
     >
       <body>{children}</body>
     </html>
