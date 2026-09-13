@@ -14,7 +14,7 @@ year: "2025-2026"
 timeline: 1+ years, ongoing
 team: 2 designers, 5-7 developers, 1 PM
 platform: Web app
-heroImage: /images/soulmates-ux-hero.png
+heroImage: /images/soulmates/soulmaites-hero.png
 thumbnail: /images/soulmates-thumbnail.png
 problem: >-
   Traditional audience testing was expensive, slow, and difficult to access —
