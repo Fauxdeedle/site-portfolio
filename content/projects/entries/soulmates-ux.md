@@ -10,58 +10,52 @@ description: >-
   costly research panels.
 client: Ayzenberg
 role: Product Designer
-year: "2025-2026"
-timeline: 1+ years, ongoing
+year: "2024-2026"
+timeline: 2024-2026
 team: 2 designers, 5-7 developers, 1 PM
 platform: Web app
 heroImage: /images/soulmates/soulmaites-hero.png
 thumbnail: /images/soulmates-thumbnail.png
 problem: >-
-  Traditional audience testing was expensive, slow, and difficult to access —
+  Traditional audience testing is expensive, slow, and difficult to access,
   leaving marketers and creatives with little way to validate ideas before
   committing to them. Soulmates.ai removes that friction by replacing costly
   research panels with AI personas trained on real audience data, making
   creative testing instant and affordable.
 goal: >-
-  Launch a validated product that marketing teams and creatives would
-  actually adopt, proven by strong interest from companies and internal
-  teams at launch — with room to expand features post-launch.
+  How do we leverage emerging AI technology with the agency's 20+ years of
+  marketing data for not only the internal marketing team but also clients?
+  The goal was to launch a validated product that marketing teams and
+  creatives would actually adopt, proven by strong interest from companies
+  and internal teams at launch, with room to expand features post-launch.
 process:
-  - title: Research & Discovery
+  - title: "Capacity Identification: What can AI do for us"
     description: >-
-      Deep-dived into AI capabilities and explored how 20+ years of agency
-      data could be leveraged. The marketing team's enthusiasm during this
-      phase organically identified them as the primary audience.
-    image: /images/placeholder.png
-  - title: Design & Validation
+      The first step was figuring out how we can practically leverage AI
+      for creative workflows, validating ideas, and integrating our 20+
+      year knowledge base. We also needed to figure out how AI can give
+      useful outputs for our creative teams, whether that's creative assets
+      or reviews of their work based on the audience they are marketing to.
+  - title: "Design & Integration: Large functionality, small package"
     description: >-
-      Mapped out tool functionality and user interaction flows, built
-      designs, and tested directly with the marketing team to validate and
-      iterate.
-    image: /images/placeholder.png
-  - title: Consolidation & Launch
+      The next step was designing how we fit all this functionality into a
+      tool that our team and our clients easily use. We came to the
+      conclusion that using a side toolbar would create the least amount of
+      friction when switching between tools. This design decision let us
+      easily add new tools as we developed them. Integrated tool functions
+      were designed via chat bar popups and artifact screens.
+  - title: "Creating the Tools: Creativity in many forms"
     description: >-
-      Brought a collection of individual tools together into a unified app
-      experience and shipped with continued feature expansion post-launch.
-    image: /images/placeholder.png
-keyDecisions:
-  - title: Toolbar-based navigation
-    description: >-
-      As the number of tools grew, a toolbar system — inspired by
-      industry-standard creative tools like Figma and Photoshop — gave the
-      app room to scale while aligning with mental models the target
-      audience already had. It proved its worth as post-launch features
-      were added without breaking the structure.
-  - title: Instagram-style UI for the social post predictor
-    description: >-
-      Rather than presenting users with a dense form, the social post
-      prediction tool was designed to mirror the familiar Instagram post
-      creation flow. This reduced visual strain and made an AI-powered
-      predictive tool feel immediately intuitive for marketers already used
-      to the format.
+      The final step was creating the tools themselves — Main Chat,
+      Workflows, Dashboard, Personas, Foresight Engine, and Brand Profile —
+      and making sure they fit well into the structure of the app.
 finalDesigns:
-  - /images/soulmates-ux-gallery-1.png
-  - /images/soulmates-ux-gallery-2.png
+  - /images/soulmates/chat.png
+  - /images/soulmates/workflows.png
+  - /images/soulmates/dashboard.png
+  - /images/soulmates/personas.png
+  - /images/soulmates/emv-detector.png
+  - /images/soulmates/brand-os.png
 stats:
   - value: "27%"
     label: Drop-off rate post-launch (down from 62%)
