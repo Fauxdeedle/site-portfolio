@@ -1,0 +1,73 @@
+.badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  width: 156px;
+  height: 156px;
+  padding: var(--space-4);
+  box-sizing: border-box;
+  background: var(--ink);
+  clip-path: polygon(
+    50% 0%,
+    60.87% 9.43%,
+    75% 6.7%,
+    79.7% 20.3%,
+    93.3% 25%,
+    90.57% 39.13%,
+    100% 50%,
+    90.57% 60.87%,
+    93.3% 75%,
+    79.7% 79.7%,
+    75% 93.3%,
+    60.87% 90.57%,
+    50% 100%,
+    39.13% 90.57%,
+    25% 93.3%,
+    20.3% 79.7%,
+    6.7% 75%,
+    9.43% 60.87%,
+    0% 50%,
+    9.43% 39.13%,
+    6.7% 25%,
+    20.3% 20.3%,
+    25% 6.7%,
+    39.13% 9.43%
+  );
+  text-align: center;
+}
+
+.value {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 1;
+  color: var(--paper);
+}
+
+.label {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1.3;
+  text-transform: uppercase;
+  color: var(--paper);
+  max-width: 76px;
+}
+
+@media (max-width: 640px) {
+  .badge {
+    width: 120px;
+    height: 120px;
+  }
+
+  .value {
+    font-size: 24px;
+  }
+
+  .label {
+    font-size: 10px;
+    max-width: 62px;
+  }
+}

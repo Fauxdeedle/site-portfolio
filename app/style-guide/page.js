@@ -13,6 +13,7 @@ import InputField from "@/components/InputField";
 import KeyDecisionCard from "@/components/KeyDecisionCard";
 import ProcessStep from "@/components/ProcessStep";
 import StatTile from "@/components/StatTile";
+import StarStat from "@/components/StarStat";
 
 import styles from "./page.module.css";
 
@@ -196,6 +197,11 @@ export default function StyleGuidePage() {
         <StatTile value="42%" label="Increase in signups" />
         <StatTile value="3.2s" label="Faster load time" />
         <StatTile value="12" label="Projects shipped" />
+      </Section>
+
+      <Section title="StarStat">
+        <StarStat value="12 years" label="in the industry" />
+        <StarStat value="60+" label="projects completed" />
       </Section>
 
       <Section title="ProcessStep">

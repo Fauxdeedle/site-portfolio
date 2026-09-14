@@ -1,5 +1,6 @@
 import Link from "next/link";
 import HomeCard from "@/components/HomeCard";
+import StarStat from "@/components/StarStat";
 import ButtonLink from "@/components/ButtonLink";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
 import ContactForm from "@/components/ContactForm";
@@ -24,16 +25,8 @@ export default function Home() {
             impossible to ignore — from first logo to full website.
           </span>
         </div>
-        <div className={styles.stats}>
-          <div className={styles.stat}>
-            <h4 className={styles.statNumber}>10 years</h4>
-            <span className={styles.statLabel}>in the industry</span>
-          </div>
-          <div className={styles.stat}>
-            <h4 className={styles.statNumber}>60+</h4>
-            <span className={styles.statLabel}>Projects completed</span>
-          </div>
-        </div>
+        <StarStat value="12 years" label="in the industry" className={styles.statLeft} />
+        <StarStat value="60+" label="projects completed" className={styles.statRight} />
       </section>
 
       <section className={styles.section}>
