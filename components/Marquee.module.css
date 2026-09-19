@@ -1,16 +1,21 @@
 .root {
-  width: 100%;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
   overflow: hidden;
   padding: var(--space-7) 0;
 }
 
 .bar {
   display: flex;
-  width: 110%;
-  margin-left: -5%;
+  width: 110vw;
+  margin-left: -5vw;
   overflow: hidden;
   background: var(--ink);
-  transform: rotate(-2deg);
+  transform: rotate(2deg);
   border-top: var(--stroke-heavy) solid var(--ink);
   border-bottom: var(--stroke-heavy) solid var(--ink);
   box-shadow: var(--shadow-pop);
@@ -45,10 +50,10 @@
 
 @keyframes scroll {
   from {
-    transform: translateX(0);
+    transform: translateX(-100%);
   }
   to {
-    transform: translateX(-100%);
+    transform: translateX(0);
   }
 }
 
