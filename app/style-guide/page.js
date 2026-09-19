@@ -11,6 +11,7 @@ import Icon from "@/components/Icon";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
 import InputField from "@/components/InputField";
 import KeyDecisionCard from "@/components/KeyDecisionCard";
+import Marquee from "@/components/Marquee";
 import ProcessStep from "@/components/ProcessStep";
 import StatTile from "@/components/StatTile";
 
@@ -214,6 +215,10 @@ export default function StyleGuidePage() {
             <span>{name}</span>
           </div>
         ))}
+      </Section>
+
+      <Section title="Marquee">
+        <Marquee />
       </Section>
 
       <Section title="ImagePlaceholder">

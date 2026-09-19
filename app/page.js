@@ -3,8 +3,17 @@ import HomeCard from "@/components/HomeCard";
 import ButtonLink from "@/components/ButtonLink";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
 import ContactForm from "@/components/ContactForm";
+import Marquee from "@/components/Marquee";
 import { projects } from "@/lib/projects";
 import styles from "./page.module.css";
+
+const SKILLS = [
+  "Graphic Design",
+  "Branding",
+  "Web Design",
+  "Print",
+  "Illustration",
+];
 
 export default function Home() {
   const [featured, ...rest] = projects;
@@ -35,6 +44,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <Marquee items={SKILLS} />
 
       <section className={styles.section}>
         <h2 className={styles.sectionHeading}>What I do</h2>
