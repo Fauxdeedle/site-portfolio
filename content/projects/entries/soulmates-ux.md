@@ -3,6 +3,7 @@ name: Soulmates.ai
 order: 1
 portfolioOrder: 1
 category: product design
+type: product
 tagline: An AI research tool that replaces expensive audience panels with instant, chat-based persona testing
 description: >-
   An internal AI tool built at Ayzenberg — marketers and creatives test

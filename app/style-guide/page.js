@@ -14,6 +14,7 @@ import KeyDecisionCard from "@/components/KeyDecisionCard";
 import Marquee from "@/components/Marquee";
 import ProcessStep from "@/components/ProcessStep";
 import StatTile from "@/components/StatTile";
+import Switcher from "@/components/Switcher";
 
 import styles from "./page.module.css";
 
@@ -132,6 +133,11 @@ export default function StyleGuidePage() {
       <Section title="FormField">
         <FormField label="Your name" placeholder="name" />
         <FormField label="Tell me about the project" placeholder="tell me a bit about the project" multiline />
+      </Section>
+
+      <Section title="Switcher">
+        <Switcher value="Product" />
+        <Switcher value="Graphic" />
       </Section>
 
       <Section title="Dropdown">

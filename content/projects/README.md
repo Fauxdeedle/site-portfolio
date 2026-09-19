@@ -33,6 +33,7 @@ without touching `order` or the main homepage.
 | `order` | number | yes | Controls display order on the main homepage (`/`) |
 | `portfolioOrder` | number | no | Controls display order on the link-only portfolio homepage (`/portfolio`); omit to leave the project off that page |
 | `category` | string | yes | e.g. `branding`, `websites`, `print - branding` |
+| `type` | string | yes | `product` or `graphic` — which bucket the homepage Product/Graphic switcher shows this project under |
 | `tagline` | string | yes | Short one-liner |
 | `description` | string | yes | Used on the homepage featured card |
 | `client` | string | yes | Use `"—"` if not applicable |
@@ -95,6 +96,7 @@ name: Acme Co Rebrand
 order: 4
 portfolioOrder: 1
 category: branding
+type: graphic
 tagline: A full identity refresh for a 20-year-old hardware brand
 description: >-
   A ground-up identity refresh — logo, packaging, and a new site.

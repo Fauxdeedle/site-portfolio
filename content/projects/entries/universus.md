@@ -2,6 +2,7 @@
 name: Universus
 order: 3
 category: product design
+type: product
 tagline: A full ecommerce redesign for a card game publisher — from checkout to homepage
 description: >-
   A ground-up redesign of UVS Games' ecommerce and marketing sites — checkout

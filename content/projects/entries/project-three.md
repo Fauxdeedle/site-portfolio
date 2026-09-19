@@ -2,6 +2,7 @@
 name: Project Three
 order: 5
 category: websites
+type: graphic
 tagline: Project details coming soon
 description: Case study write-up in progress.
 client: "—"

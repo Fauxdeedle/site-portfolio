@@ -2,6 +2,7 @@
 name: Project Two
 order: 4
 category: branding
+type: graphic
 tagline: Project details coming soon
 description: Case study write-up in progress.
 client: "—"
