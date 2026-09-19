@@ -13,6 +13,8 @@ const SKILLS = [
   "Web Design",
   "Print",
   "Illustration",
+  "UX/UI",
+  "Product Design",
 ];
 
 export default function Home() {
