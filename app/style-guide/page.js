@@ -13,6 +13,8 @@ import InputField from "@/components/InputField";
 import KeyDecisionCard from "@/components/KeyDecisionCard";
 import Marquee from "@/components/Marquee";
 import ProcessStep from "@/components/ProcessStep";
+import ProjectCard from "@/components/ProjectCard";
+import ProjectShowcase from "@/components/ProjectShowcase";
 import StatTile from "@/components/StatTile";
 import Switcher from "@/components/Switcher";
 
@@ -161,6 +163,38 @@ export default function StyleGuidePage() {
         />
         <HomeCard icon="branding" title="Branding" description="A voice that sticks." />
         <HomeCard icon="websites" title="Websites" description="Built to convert." />
+      </Section>
+
+      <Section title="ProjectCard">
+        <ProjectCard
+          slug="example-project"
+          name="Example Project"
+          category="Branding"
+          year="2026"
+          description="A short description of the project, trimmed to a few lines for the card."
+        />
+      </Section>
+
+      <Section title="ProjectShowcase">
+        <ProjectShowcase
+          projects={[
+            {
+              slug: "example-project",
+              name: "Example Project",
+              category: "Branding",
+              year: "2026",
+              description:
+                "A short description of the project, giving context on the problem, the approach, and the outcome.",
+            },
+            {
+              slug: "another-project",
+              name: "Another Project",
+              category: "Product",
+              year: "2025",
+              description: "A second slide to show the stepper cycling between projects.",
+            },
+          ]}
+        />
       </Section>
 
       <Section title="KeyDecisionCard">

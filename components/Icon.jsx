@@ -19,6 +19,8 @@ const PATHS = {
     </>
   ),
   "chevron-down": <path d="M6 9l6 6 6-6" />,
+  "arrow-left": <path d="M19 12H5M11 18l-6-6 6-6" />,
+  "arrow-right": <path d="M5 12h14M13 6l6 6-6 6" />,
   sparkle: (
     <path d="M12 2l1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8L12 2z" />
   ),

@@ -125,115 +125,22 @@
   flex-wrap: wrap;
 }
 
-.featured {
-  text-decoration: none;
-  color: inherit;
-  display: flex;
+.projectGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 32px;
-  align-items: flex-end;
-  cursor: pointer;
-  flex-wrap: wrap;
 }
 
-.featuredImage {
-  flex-grow: 1;
-  border-radius: 16px;
-  object-fit: cover;
-  width: 50%;
-  min-width: 280px;
-  height: 386px;
+@media (max-width: 900px) {
+  .projectGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-.featuredImagePlaceholder {
-  flex-grow: 1;
-  width: 50%;
-  min-width: 280px;
-  height: 386px;
-}
-
-.featuredBody {
-  flex-grow: 1;
-  min-width: 280px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  align-items: flex-start;
-}
-
-.featuredCategory {
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 24px;
-  text-transform: uppercase;
-  color: var(--ink);
-}
-
-.featuredTag {
-  font-family: var(--font-subhead);
-  font-weight: 500;
-  font-size: 20px;
-  text-transform: uppercase;
-  color: var(--ink);
-}
-
-.featuredDescription {
-  font-family: var(--font-body);
-  font-weight: 500;
-  font-size: 16px;
-  color: var(--ink-black);
-  line-height: 1.4;
-}
-
-.teasers {
-  display: flex;
-  gap: 32px;
-  margin-top: 8px;
-  flex-wrap: wrap;
-}
-
-.teaser {
-  text-decoration: none;
-  color: inherit;
-  flex: 1 1 260px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  cursor: pointer;
-}
-
-.teaserImage {
-  width: 100%;
-  height: 220px;
-}
-
-.teaserImageImg {
-  width: 100%;
-  height: 100%;
-  border-radius: 16px;
-  object-fit: cover;
-}
-
-.teaserBody {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  align-items: flex-start;
-}
-
-.teaserName {
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 18px;
-  text-transform: uppercase;
-  color: var(--ink);
-}
-
-.teaserDescription {
-  font-family: var(--font-body);
-  font-weight: 500;
-  font-size: 16px;
-  color: var(--ink-black);
-  line-height: 1.4;
+@media (max-width: 560px) {
+  .projectGrid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* About */
@@ -313,7 +220,6 @@
     padding: 40px 20px;
   }
 
-  .featured,
   .about,
   .contact {
     flex-direction: column;
