@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Button from "@/components/Button";
 import ButtonLink from "@/components/ButtonLink";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
 import { portfolioProjects } from "@/lib/projects";
@@ -61,7 +62,9 @@ export default function Portfolio() {
               <span className={styles.featuredCategory}>{featured.name}</span>
               <span className={styles.featuredTag}>{featured.category}</span>
               <span className={styles.featuredDescription}>{featured.description}</span>
-              <ButtonLink href={`/work/${featured.slug}?from=portfolio`}>See more</ButtonLink>
+              <Button type="button" tabIndex={-1}>
+                See more
+              </Button>
             </div>
           </Link>
           <div className={styles.teasers}>

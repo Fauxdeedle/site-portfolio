@@ -11,8 +11,10 @@ import Icon from "@/components/Icon";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
 import InputField from "@/components/InputField";
 import KeyDecisionCard from "@/components/KeyDecisionCard";
+import Marquee from "@/components/Marquee";
 import ProcessStep from "@/components/ProcessStep";
 import StatTile from "@/components/StatTile";
+import Switcher from "@/components/Switcher";
 
 import styles from "./page.module.css";
 
@@ -133,6 +135,11 @@ export default function StyleGuidePage() {
         <FormField label="Tell me about the project" placeholder="tell me a bit about the project" multiline />
       </Section>
 
+      <Section title="Switcher">
+        <Switcher value="Product" />
+        <Switcher value="Graphic" />
+      </Section>
+
       <Section title="Dropdown">
         <Dropdown label="Pick one" options={["Option 01", "Option 02", "Option 03"]} />
       </Section>
@@ -214,6 +221,10 @@ export default function StyleGuidePage() {
             <span>{name}</span>
           </div>
         ))}
+      </Section>
+
+      <Section title="Marquee">
+        <Marquee />
       </Section>
 
       <Section title="ImagePlaceholder">

@@ -1,0 +1,39 @@
+.switcher {
+  position: relative;
+  display: inline-flex;
+  background-color: var(--ink-black);
+  border-radius: var(--radius-xl);
+  padding: 4px;
+  box-sizing: border-box;
+}
+
+.knob {
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  left: 4px;
+  width: calc((100% - 8px) / var(--option-count, 2));
+  border-radius: var(--radius-xl);
+  background-color: var(--white);
+  transition: transform 200ms ease;
+}
+
+.option {
+  position: relative;
+  z-index: 1;
+  flex: 1 1 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 10px 28px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: var(--text-heading-sm, 20px);
+  color: var(--white);
+  transition: color 200ms ease;
+  white-space: nowrap;
+}
+
+.optionActive {
+  color: var(--ink-black);
+}

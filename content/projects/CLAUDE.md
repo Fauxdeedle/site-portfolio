@@ -46,6 +46,16 @@ appear on `/portfolio`; `getNextProject` is unaffected and still walks the
 full `order`-sorted list regardless of which homepage a visitor arrived
 from.
 
+## Product vs graphic type
+
+`type: product | graphic` buckets a project for the homepage's Product/Graphic
+`Switcher` (`components/Switcher.jsx`, rendered by `components/WorkShowcase.jsx`
+in `app/page.js`). Switching the toggle filters `projects` by this field and
+re-derives the featured card + two teasers from the filtered list, still
+ordered by `order`. It's independent of `category` (the free-text label shown
+on project cards/pages) — `category` can read `print - branding` while `type`
+is simply `graphic`.
+
 ## Thumbnail vs hero image
 
 `heroImage` is the big image on the `/work/[slug]` detail page. `thumbnail`

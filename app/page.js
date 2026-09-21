@@ -1,16 +1,22 @@
-import Link from "next/link";
 import HomeCard from "@/components/HomeCard";
-import ButtonLink from "@/components/ButtonLink";
-import ImagePlaceholder from "@/components/ImagePlaceholder";
 import ContactForm from "@/components/ContactForm";
+import Marquee from "@/components/Marquee";
+import WorkShowcase from "@/components/WorkShowcase";
 import { projects } from "@/lib/projects";
 import styles from "./page.module.css";
 
-export default function Home() {
-  const [featured, ...rest] = projects;
-  const teasers = rest.slice(0, 2);
-  const featuredThumbnail = featured.thumbnail;
+const SKILLS = [
+  "Graphic Design",
+  "Branding",
+  "Web Design",
+  "Print",
+  "Illustration",
+  "UX/UI",
+  "Product Design",
+  "Design Systems",
+];
 
+export default function Home() {
   return (
     <div className={styles.container}>
       <section className={styles.hero}>
@@ -36,6 +42,9 @@ export default function Home() {
         </div>
       </section>
 
+      <Marquee items={SKILLS} />
+
+      {/* "What I do" section hidden for now
       <section className={styles.section}>
         <h2 className={styles.sectionHeading}>What I do</h2>
         <div className={styles.cards}>
@@ -59,55 +68,10 @@ export default function Home() {
           />
         </div>
       </section>
+      */}
 
       <section className={styles.section}>
-        <h2 className={styles.sectionHeading}>Some of my work</h2>
-        <Link href={`/work/${featured.slug}`} className={styles.featured}>
-          {featuredThumbnail ? (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
-              src={featuredThumbnail}
-              alt={`${featured.name} work sample`}
-              className={styles.featuredImage}
-            />
-          ) : (
-            <div className={styles.featuredImagePlaceholder}>
-              <ImagePlaceholder label={`${featured.name} cover`} />
-            </div>
-          )}
-          <div className={styles.featuredBody}>
-            <span className={styles.featuredCategory}>{featured.name}</span>
-            <span className={styles.featuredTag}>{featured.category}</span>
-            <span className={styles.featuredDescription}>{featured.description}</span>
-            <ButtonLink href={`/work/${featured.slug}`}>See more</ButtonLink>
-          </div>
-        </Link>
-        <div className={styles.teasers}>
-          {teasers.map((project) => {
-            const thumbnail = project.thumbnail;
-            return (
-              <Link key={project.slug} href={`/work/${project.slug}`} className={styles.teaser}>
-                <div className={styles.teaserImage}>
-                  {thumbnail ? (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img
-                      src={thumbnail}
-                      alt={`${project.name} work sample`}
-                      className={styles.teaserImageImg}
-                    />
-                  ) : (
-                    <ImagePlaceholder label={`Drop ${project.name.toLowerCase()} image`} />
-                  )}
-                </div>
-                <div className={styles.teaserBody}>
-                  <span className={styles.teaserName}>{project.name}</span>
-                  <span className={styles.teaserDescription}>{project.description}</span>
-                  <ButtonLink href={`/work/${project.slug}`}>See more</ButtonLink>
-                </div>
-              </Link>
-            );
-          })}
-        </div>
+        <WorkShowcase projects={projects} />
       </section>
 
       <section className={`${styles.section} ${styles.about}`}>

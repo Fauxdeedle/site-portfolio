@@ -3,6 +3,7 @@ name: ayz.ai
 order: 2
 portfolioOrder: 3
 category: product design
+type: product
 tagline: An AI marketing assistant for creatives — from core chat to a full custom-agent builder
 description: >-
   Ayzenberg's internal AI marketing assistant — a chat-first interface with

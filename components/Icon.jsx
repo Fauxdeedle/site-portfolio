@@ -19,6 +19,9 @@ const PATHS = {
     </>
   ),
   "chevron-down": <path d="M6 9l6 6 6-6" />,
+  sparkle: (
+    <path d="M12 2l1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8L12 2z" />
+  ),
 };
 
 export default function Icon({
