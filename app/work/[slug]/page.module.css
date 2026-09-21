@@ -119,7 +119,7 @@
 
 .finalDesignItem {
   width: 100%;
-  height: 340px;
+  aspect-ratio: 3 / 2;
   flex: 1 1 300px;
 }
 
@@ -194,8 +194,7 @@
     padding-right: 20px;
   }
 
-  .heroImage,
-  .finalDesignItem {
+  .heroImage {
     height: 220px;
   }
 }
