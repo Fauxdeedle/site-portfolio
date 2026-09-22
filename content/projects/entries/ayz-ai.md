@@ -13,6 +13,7 @@ client: Ayzenberg
 role: Product Designer
 year: "2025"
 heroImage: /images/ayz-ai-hero.png
+thumbnail: /images/ayz-ai-thumb.jpg
 finalDesigns:
   - /images/ayz-ai-gallery-1.png
   - /images/ayz-ai-gallery-2.png
