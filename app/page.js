@@ -88,6 +88,14 @@ export default function Home() {
         <img src="/images/about-photo.png" alt="Dylan Scoble" className={styles.aboutPhoto} />
       </section>
 
+      <svg width="0" height="0" style={{ position: "absolute" }} aria-hidden="true">
+        <defs>
+          <clipPath id="footer-wave" clipPathUnits="objectBoundingBox">
+            <path d="M0,0.06 C0.09,0 0.19,0 0.28,0.025 C0.37,0.05 0.41,0.1 0.5,0.1 C0.59,0.1 0.63,0.05 0.72,0.025 C0.81,0 0.91,0 1,0.06 L1,1 L0,1 Z" />
+          </clipPath>
+        </defs>
+      </svg>
+
       <section className={styles.contact}>
         <Particles
           className={styles.contactParticles}
