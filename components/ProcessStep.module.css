@@ -28,5 +28,5 @@
 .image {
   width: 100%;
   height: auto;
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-sm);
 }
