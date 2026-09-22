@@ -106,7 +106,7 @@
   font-family: var(--font-display);
   font-weight: 800;
   font-size: clamp(32px, 6vw, 64px);
-  color: var(--ink);
+  color: var(--text-primary);
 }
 
 /* What I do */
@@ -270,37 +270,67 @@
 
 /* Contact */
 .contact {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  width: 100vw;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  box-sizing: border-box;
+  padding: 72px 0;
+  background: var(--ink-black);
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+  --text-primary: var(--paper);
+  --text-body: var(--paper);
+  --surface-input: var(--paper);
+  --surface-input-alt: var(--paper);
+}
+
+.contactInner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 120px;
+  box-sizing: border-box;
+  display: flex;
   flex-direction: row;
+  align-items: center;
   gap: 32px;
   flex-wrap: wrap;
 }
 
 .contactForm {
-  flex-grow: 1;
+  flex: 1 1 0;
   min-width: 280px;
   padding: 0 24px;
   box-sizing: border-box;
 }
 
 .contactCopy {
-  flex-grow: 1;
+  flex: 1 1 0;
   min-width: 280px;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 24px;
+  text-align: center;
 }
 
 .contactBody {
   font-family: var(--font-body);
   font-weight: 500;
   font-size: 16px;
-  color: var(--ink-black);
+  color: var(--text-body);
   line-height: 1.4;
 }
 
 @media (max-width: 900px) {
   .section {
     padding: 56px 40px;
+  }
+
+  .contactInner {
+    padding: 0 40px;
   }
 }
 
@@ -313,9 +343,17 @@
     padding: 40px 20px;
   }
 
+  .contact {
+    padding: 40px 0;
+  }
+
+  .contactInner {
+    padding: 0 20px;
+  }
+
   .featured,
   .about,
-  .contact {
+  .contactInner {
     flex-direction: column;
     align-items: stretch;
   }

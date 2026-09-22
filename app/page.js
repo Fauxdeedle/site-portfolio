@@ -87,16 +87,18 @@ export default function Home() {
         <img src="/images/about-photo.png" alt="Dylan Scoble" className={styles.aboutPhoto} />
       </section>
 
-      <section className={`${styles.section} ${styles.contact}`}>
-        <div className={styles.contactForm}>
-          <ContactForm />
-        </div>
-        <div className={styles.contactCopy}>
-          <h2 className={styles.sectionHeading}>Let&apos;s work together!</h2>
-          <span className={styles.contactBody}>
-            Have a project in mind? Tell me a bit about it and I&apos;ll get back to you
-            within a couple of days.
-          </span>
+      <section className={styles.contact}>
+        <div className={styles.contactInner}>
+          <div className={styles.contactForm}>
+            <ContactForm />
+          </div>
+          <div className={styles.contactCopy}>
+            <h2 className={styles.sectionHeading}>Let&apos;s work together!</h2>
+            <span className={styles.contactBody}>
+              Have a project in mind? Tell me a bit about it and I&apos;ll get back to you
+              within a couple of days.
+            </span>
+          </div>
         </div>
       </section>
     </div>

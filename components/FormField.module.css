@@ -10,7 +10,7 @@
   font-family: var(--font-heading);
   font-weight: 700;
   font-size: var(--text-heading-md);
-  color: var(--ink);
+  color: var(--text-primary);
   text-transform: uppercase;
   line-height: 100%;
 }
