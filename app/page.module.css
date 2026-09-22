@@ -280,13 +280,20 @@
   padding: 72px 0;
   background: var(--ink-black);
   border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+  overflow: hidden;
   --text-primary: var(--paper);
   --text-body: var(--paper);
   --surface-input: var(--paper);
   --surface-input-alt: var(--paper);
 }
 
+.contactParticles {
+  z-index: 0;
+}
+
 .contactInner {
+  position: relative;
+  z-index: 1;
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 120px;

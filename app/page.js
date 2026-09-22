@@ -1,6 +1,7 @@
 import HomeCard from "@/components/HomeCard";
 import ContactForm from "@/components/ContactForm";
 import Marquee from "@/components/Marquee";
+import Particles from "@/components/Particles";
 import WorkShowcase from "@/components/WorkShowcase";
 import { projects } from "@/lib/projects";
 import styles from "./page.module.css";
@@ -88,6 +89,17 @@ export default function Home() {
       </section>
 
       <section className={styles.contact}>
+        <Particles
+          className={styles.contactParticles}
+          particleColors={["#ffffff"]}
+          particleCount={200}
+          particleSpread={10}
+          speed={0.1}
+          particleBaseSize={100}
+          moveParticlesOnHover={false}
+          alphaParticles={true}
+          disableRotation={false}
+        />
         <div className={styles.contactInner}>
           <div className={styles.contactForm}>
             <ContactForm />
