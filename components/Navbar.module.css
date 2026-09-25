@@ -1,0 +1,34 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-1) var(--space-3);
+  background: var(--paper);
+  border: var(--stroke-thick) solid var(--border-ink);
+  border-radius: 999px;
+  box-shadow: var(--shadow-pop-sm);
+}
+
+.logo:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 4px;
+}
+
+.logoImg {
+  height: 28px;
+  width: auto;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.contactHeading {
+  font-family: var(--font-heading);
+  font-weight: var(--weight-bold);
+  font-size: var(--text-heading-sm);
+  text-transform: uppercase;
+  color: var(--ink);
+}

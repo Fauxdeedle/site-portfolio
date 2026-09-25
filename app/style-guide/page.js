@@ -18,7 +18,7 @@ import Switcher from "@/components/Switcher";
 
 import styles from "./page.module.css";
 
-const ICON_NAMES = ["graphic", "branding", "websites", "chevron-down"];
+const ICON_NAMES = ["graphic", "branding", "websites", "chevron-down", "speech-bubble"];
 
 const HEADINGS = [
   { tag: "h1", className: "h1", size: "clamp(48px, 11vw, 128px)" },
@@ -221,6 +221,13 @@ export default function StyleGuidePage() {
             <span>{name}</span>
           </div>
         ))}
+      </Section>
+
+      <Section title="Navbar / StaggeredMenu">
+        <span>
+          Rendered once in app/layout.js — see the &quot;Reach out&quot; toggle at the top
+          of this page.
+        </span>
       </Section>
 
       <Section title="Marquee">

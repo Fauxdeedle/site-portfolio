@@ -42,6 +42,18 @@ Defaults are destructured inline in the function signature — no
   children (`Dropdown`'s trigger/option buttons) only get `className`/`...rest`
   on their outermost wrapper, never on the internal elements that manage
   their own `onClick`/`type`/ARIA state.
+- **Layout singletons** (`Navbar`, which composes `StaggeredMenu`) are
+  rendered once in `app/layout.js` as a fixed overlay, so the style guide
+  only notes them instead of rendering a second copy inline.
+
+## StaggeredMenu
+
+Adapted from React Bits. Its GSAP timelines find panel elements via
+`data-sm="prelayer" | "item" | "label" | "extra"` attributes (CSS Module class
+names are hashed) — keep those hooks when editing the markup. Pages that want
+the navbar logo hidden until scrolled past should mark their hero with
+`data-nav-hero` (currently only the home page, gated by `pathname === "/"`
+in `Navbar.jsx`).
 
 ## Adding a new component
 

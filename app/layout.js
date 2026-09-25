@@ -1,4 +1,5 @@
 import { Baloo_2, Barlow, Barlow_Condensed, Inter } from "next/font/google";
+import Navbar from "@/components/Navbar";
 import "./globals.css";
 
 const baloo2 = Baloo_2({
@@ -41,7 +42,10 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${baloo2.variable} ${barlow.variable} ${barlowCondensed.variable} ${inter.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }
