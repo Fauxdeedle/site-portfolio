@@ -53,31 +53,25 @@
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
-  padding: var(--space-2) var(--space-4);
+  padding: var(--space-1) var(--space-6);
   background: var(--paper);
   color: var(--ink);
-  border: var(--stroke-thick) solid var(--border-ink);
-  border-radius: 999px;
-  box-shadow: var(--shadow-pop-sm);
+  border: none;
+  border-radius: var(--radius-sm);
+  box-shadow: none;
   font-family: var(--font-heading);
   font-weight: var(--weight-bold);
   font-size: var(--text-body-md);
   text-transform: uppercase;
   line-height: 1;
   cursor: pointer;
-  transition:
-    transform 0.15s ease,
-    box-shadow 0.15s ease;
+  transition: box-shadow 120ms ease;
 }
 
-.toggle:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 6px 6px 0 0 var(--shadow-hard);
-}
-
-.toggle:active {
-  transform: translate(2px, 2px);
-  box-shadow: 2px 2px 0 0 var(--shadow-hard);
+/* Flat until hovered, then pops like Button */
+.toggle:hover,
+.toggle:focus-visible {
+  box-shadow: var(--outline-thin), var(--shadow-pop);
 }
 
 .toggle:focus-visible {

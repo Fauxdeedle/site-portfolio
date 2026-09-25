@@ -36,7 +36,19 @@ export default function Navbar() {
       items={LINKS}
       logoVisible={!hasHero || pastHero}
       logo={
-        <Link href="/" className={styles.logo} aria-label="Dylan Scoble — home">
+        <Link
+          href="/"
+          className={styles.logo}
+          aria-label="Dylan Scoble — home"
+          onClick={(e) => {
+            // Already on home: glide back up to the hero instead of a no-op navigation.
+            const hero = document.querySelector("[data-nav-hero]");
+            if (hasHero && hero) {
+              e.preventDefault();
+              hero.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+          }}
+        >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/images/hero-illustration.png" alt="" className={styles.logoImg} draggable={false} />
         </Link>
