@@ -37,6 +37,7 @@ process:
       year knowledge base. We also needed to figure out how AI can give
       useful outputs for our creative teams, whether that's creative assets
       or reviews of their work based on the audience they are marketing to.
+    image: /images/soulmates/soul-chart.png
   - title: "Design & Integration: Large functionality, small package"
     description: >-
       The next step was designing how we fit all this functionality into a
@@ -50,6 +51,7 @@ process:
       The final step was creating the tools themselves — Main Chat,
       Workflows, Dashboard, Personas, Foresight Engine, and Brand Profile —
       and making sure they fit well into the structure of the app.
+    image: /images/soulmates/soul-ui-01.png
 finalDesigns:
   - /images/soulmates/chat.png
   - /images/soulmates/workflows.png

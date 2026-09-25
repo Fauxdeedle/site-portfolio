@@ -1,15 +1,13 @@
 .step {
   display: flex;
-  gap: 32px;
-  flex-wrap: wrap;
-  align-items: flex-start;
+  flex-direction: column;
+  gap: 24px;
 }
 
 .text {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  flex: 1 1 320px;
 }
 
 .title {
@@ -28,16 +26,7 @@
 }
 
 .image {
-  flex: 1 1 320px;
   width: 100%;
-  max-width: 420px;
-  height: 260px;
-  object-fit: cover;
-  border-radius: var(--radius-lg);
-}
-
-@media (max-width: 560px) {
-  .image {
-    height: 200px;
-  }
+  height: auto;
+  border-radius: var(--radius-sm);
 }

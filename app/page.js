@@ -1,6 +1,7 @@
 import HomeCard from "@/components/HomeCard";
 import ContactForm from "@/components/ContactForm";
 import Marquee from "@/components/Marquee";
+import Particles from "@/components/Particles";
 import WorkShowcase from "@/components/WorkShowcase";
 import { projects } from "@/lib/projects";
 import styles from "./page.module.css";
@@ -87,16 +88,37 @@ export default function Home() {
         <img src="/images/about-photo.png" alt="Dylan Scoble" className={styles.aboutPhoto} />
       </section>
 
-      <section className={`${styles.section} ${styles.contact}`}>
-        <div className={styles.contactForm}>
-          <ContactForm />
-        </div>
-        <div className={styles.contactCopy}>
-          <h2 className={styles.sectionHeading}>Let&apos;s work together!</h2>
-          <span className={styles.contactBody}>
-            Have a project in mind? Tell me a bit about it and I&apos;ll get back to you
-            within a couple of days.
-          </span>
+      <svg width="0" height="0" style={{ position: "absolute" }} aria-hidden="true">
+        <defs>
+          <clipPath id="footer-wave" clipPathUnits="objectBoundingBox">
+            <path d="M0,0.06 C0.09,0 0.19,0 0.28,0.025 C0.37,0.05 0.41,0.1 0.5,0.1 C0.59,0.1 0.63,0.05 0.72,0.025 C0.81,0 0.91,0 1,0.06 L1,1 L0,1 Z" />
+          </clipPath>
+        </defs>
+      </svg>
+
+      <section className={styles.contact}>
+        <Particles
+          className={styles.contactParticles}
+          particleColors={["#ffffff"]}
+          particleCount={200}
+          particleSpread={10}
+          speed={0.1}
+          particleBaseSize={100}
+          moveParticlesOnHover={false}
+          alphaParticles={true}
+          disableRotation={false}
+        />
+        <div className={styles.contactInner}>
+          <div className={styles.contactForm}>
+            <ContactForm />
+          </div>
+          <div className={styles.contactCopy}>
+            <h2 className={styles.sectionHeading}>Let&apos;s work together!</h2>
+            <span className={styles.contactBody}>
+              Have a project in mind? Tell me a bit about it and I&apos;ll get back to you
+              within a couple of days.
+            </span>
+          </div>
         </div>
       </section>
     </div>
