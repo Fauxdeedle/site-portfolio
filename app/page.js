@@ -20,7 +20,7 @@ const SKILLS = [
 export default function Home() {
   return (
     <div className={styles.container}>
-      <section className={styles.hero}>
+      <section className={styles.hero} data-nav-hero>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src="/images/hero-illustration.png" alt="" className={styles.heroImage} />
         <div className={styles.heroCopy}>
