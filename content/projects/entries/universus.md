@@ -13,6 +13,7 @@ role: UX/UI Design
 year: "2024"
 team: 2 designers, handoff to a 3rd-party dev team
 heroImage: /images/universus-hero.png
+thumbnail: /images/UVS-thumb.png
 problem: >-
   UVS Games was running a site built before they acquired the Universus card
   game IP. It no longer reflected the brand, made it hard to showcase new
