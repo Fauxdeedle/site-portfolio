@@ -12,7 +12,7 @@ client: UVS Games
 role: UX/UI Design
 year: "2024"
 team: 2 designers, handoff to a 3rd-party dev team
-heroImage: /images/universus-hero.png
+heroImage: /images/uvs-hero.png
 thumbnail: /images/UVS-thumb.png
 problem: >-
   UVS Games was running a site built before they acquired the Universus card
